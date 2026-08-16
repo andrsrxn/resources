@@ -143,7 +143,7 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
                 <a
                   href={`#${catId}`}
                   className={cn(
-                    'underline-offset-1 transition-colors duration-150 hover:underline',
+                    'block w-full underline-offset-1 transition-colors duration-150 hover:underline',
                     isCategoryActive ? 'font-medium text-white' : 'text-muted-foreground'
                   )}>
                   {category}
@@ -158,7 +158,7 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
                             href={`#${sub.id}`}
                             data-sub-id={sub.id}
                             className={cn(
-                              'underline-offset-1 transition-colors duration-150 hover:underline',
+                              'block w-full underline-offset-1 transition-colors duration-150 hover:underline',
                               isSubActive ? 'font-medium text-white' : 'text-muted-foreground'
                             )}>
                             {sub.name}
