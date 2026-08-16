@@ -89,7 +89,7 @@ export const ResourceGrid = ({ className, ...props }: ComponentProps<'div'>) => 
     <div className={cn('grid gap-20', className)} {...props}>
       <FloatingTOC categories={tocCategories} />
 
-      <hr className='my-14 border-b' />
+      <hr className='mt-14 -mb-6 border-b' />
 
       <div id='main-content' className='grid gap-20'>
         {filteredResources.map(([groupKey, group]) => {
