@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { GlobalSearch } from '@/components/global-search'
+import { Heading } from '@/components/heading'
+import { ResourceGrid } from '@/components/resource-grid'
+import { Text } from '@/components/text'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <div class='animate-fade-in container mx-auto max-w-7xl px-8 py-12'>
+      <div class='grid gap-4'>
+        <Heading className='laptop:text-8xl text-7xl'>Resources</Heading>
+        <Text variant='secondary' className='desktop:text-xl'>
+          A curated hand-picked collection of hundreds of <strong>free</strong> resources, tools, and
+          inspirations for developers and creators.
+        </Text>
+        <GlobalSearch client:load />
+      </div>
+      <ResourceGrid client:load />
+    </div>
+  </main>
 </Layout>

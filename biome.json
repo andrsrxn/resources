@@ -1,0 +1,229 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.7/schema.json",
+  "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/*.mjs",
+      "!**/*.cjs",
+      "!**/.agents",
+      "!**/node_modules",
+      "!**/pnpm-lock.yaml",
+      "!**/*.lock"
+    ]
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": false
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "all",
+
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "noLabelWithoutControl": {
+          "level": "error",
+          "options": {
+            "inputComponents": [
+              "Input",
+              "Textarea",
+              "Checkbox",
+              "Select",
+              "Comobobox",
+              "InputPassword",
+              "InputDatePicker",
+              "InputDateRangePicker",
+              "InputTags",
+              "InputOTP",
+              "MultiSelect",
+              "Switch",
+              "Toggle"
+            ],
+            "labelComponents": ["InputLabel"],
+            "labelAttributes": ["label", "aria-label", "aria-labelledby"]
+          }
+        },
+        "noNoninteractiveTabindex": "off",
+        "useKeyWithClickEvents": "off"
+      },
+      "complexity": {
+        "noUselessCatchBinding": "error",
+        "useMaxParams": {
+          "level": "error",
+          "options": {
+            "max": 8
+          }
+        },
+        "noExcessiveLinesPerFunction": {
+          "level": "error",
+          "options": {
+            "maxLines": 80,
+            "skipBlankLines": true,
+            "skipIifes": false
+          }
+        },
+        "noImportantStyles": "off"
+      },
+      "correctness": {
+        "noUnresolvedImports": "off",
+        "noNodejsModules": "off",
+        "noUnusedImports": "off",
+        "useImportExtensions": "off",
+        "noUnknownPseudoElement": "off",
+        "useUniqueElementIds": "off"
+      },
+      "style": {
+        "useConsistentArrowReturn": "off",
+        "noHexColors": "off",
+        "useGlobalThis": "off",
+        "noContinue": "off",
+        "noIncrementDecrement": "off",
+        "noTernary": "off",
+        "noJsxLiterals": "off",
+        "noImplicitBoolean": "off",
+        "noExcessiveLinesPerFile": "off",
+        "useBlockStatements": {
+          "level": "warn",
+          "fix": "safe",
+          "options": {}
+        },
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": { "requireAscii": true, "filenameCases": ["kebab-case"] }
+        },
+        "useNamingConvention": {
+          "level": "warn",
+          "options": {
+            "strictCase": false,
+            "requireAscii": true,
+            "conventions": [
+              {
+                "selector": { "kind": "objectLiteralProperty" },
+                "formats": ["CONSTANT_CASE", "camelCase", "PascalCase", "snake_case"]
+              },
+              {
+                "selector": { "kind": "functionParameter" },
+                "formats": ["camelCase", "CONSTANT_CASE"]
+              }
+            ]
+          },
+          "fix": "safe"
+        },
+        "noDefaultExport": "off",
+        "noUnusedTemplateLiteral": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        },
+        "useSelfClosingElements": {
+          "options": {
+            "ignoreHtmlElements": false
+          },
+          "fix": "safe",
+          "level": "error"
+        },
+        "useTemplate": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        },
+        "useArrayLiterals": "off",
+        "noNestedTernary": "off",
+
+        "useComponentExportOnlyModules": "off",
+        "useConsistentCurlyBraces": {
+          "level": "off",
+          "fix": "safe",
+          "options": {}
+        },
+        "useConsistentObjectDefinitions": {
+          "fix": "safe",
+          "level": "error",
+          "options": { "syntax": "shorthand" }
+        },
+        "useExportsLast": "off"
+      },
+      "suspicious": {
+        "noLeakedRender": "off",
+        "noShadow": "off",
+        "noEmptySource": {
+          "level": "error",
+          "options": {
+            "allowComments": true
+          }
+        },
+        "noEmptyBlockStatements": "off",
+        "noEmptyInterface": "off",
+        "noConsole": {
+          "fix": "unsafe",
+          "level": "warn",
+          "options": {
+            "allow": ["error", "log"]
+          }
+        },
+        "noEmptyBlock": "warn",
+        "noReactSpecificProps": "off",
+        "noShadowRestrictedNames": "warn",
+        "noSkippedTests": "warn",
+        "noUnknownAtRules": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
+      }
+    },
+    "domains": {
+      "drizzle": "none",
+      "next": "all",
+      "react": "all",
+      "playwright": "none",
+      "qwik": "none",
+      "reactNative": "none",
+      "solid": "none",
+      "svelte": "none",
+      "tailwind": "none",
+      "test": "all",
+      "turborepo": "none",
+      "types": "none",
+      "vue": "none",
+      "project": "none"
+    }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true
+  },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": false
+    }
+  },
+  "css": {
+    "parser": {
+      "allowWrongLineComments": true,
+      "cssModules": false,
+      "tailwindDirectives": true
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["src/**/*"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noUnknownAttribute": "off"
+          }
+        }
+      }
+    }
+  ]
+}

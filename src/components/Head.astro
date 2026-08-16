@@ -1,0 +1,145 @@
+---
+import { Font } from 'astro:assets'
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const title = 'Resources | andrsrxn'
+const description =
+  'A curated hand-picked collection of hundreds of free resources, tools, and inspirations for developers and creators.'
+const siteUrl = Astro.site
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: title,
+      description,
+      inLanguage: 'en',
+      publisher: {
+        '@id': `${siteUrl}/#author`,
+      },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${siteUrl}/?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${canonicalURL.toString()}#webpage`,
+      url: canonicalURL.toString(),
+      name: title,
+      description,
+      inLanguage: 'en',
+      isPartOf: {
+        '@id': `${siteUrl}/#website`,
+      },
+      about: [
+        {
+          '@type': 'Thing',
+          name: title,
+          description: description,
+        },
+      ],
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#author`,
+      name: 'andrsrxn',
+      url: 'https://andrsrxn.com',
+    },
+  ],
+}
+---
+
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width' />
+  <link
+    rel='icon'
+    type='image/svg+xml'
+    href='https://res.cloudinary.com/dq5nfyajn/image/upload/v1765561021/favicon_vqjudg.svg'
+  />
+  <Font cssVariable='--font-heading' preload />
+  <Font cssVariable='--font-body' preload />
+
+  <title>{title}</title>
+  <meta name='description' content={description} />
+  <meta name='keywords' content='resources, tools, free, developers, creators' />
+
+  <meta name='robots' content='index, follow' />
+  <link rel='sitemap' href='/sitemap-index.xml' />
+
+  <!-- Canonical/Alternate URL -->
+  <link rel='canonical' href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property='og:type' content='website' />
+  <meta property='og:url' content={Astro.url} />
+  <meta property='og:title' content={title} />
+  <meta property='og:description' content={description} />
+  <meta
+    property='og:image'
+    content='https://res.cloudinary.com/dq5nfyajn/image/upload/v1786847258/banner-og_cn2ede.png'
+  />
+  <meta property='og:image:width' content='1200' />
+  <meta property='og:image:height' content='630' />
+  <meta property='og:image:alt' content='Homepage preview' />
+  <meta property='og:site_name' content={title} />
+  <meta property='og:locale' content='en' />
+
+  <!-- Twitter -->
+  <meta property='twitter:card' content='summary_large_image' />
+  <meta property='twitter:url' content={Astro.url} />
+  <meta property='twitter:title' content={title} />
+  <meta property='twitter:description' content={description} />
+  <meta
+    property='twitter:image'
+    content={'https://res.cloudinary.com/dq5nfyajn/image/upload/v1786847258/banner-og_cn2ede.png'}
+  />
+
+  <!-- Icons -->
+  <link
+    rel='apple-touch-icon'
+    sizes='180x180'
+    href='https://res.cloudinary.com/dq5nfyajn/image/upload/v1765561020/apple-touch-icon_nqs28y.png'
+  />
+
+  <link
+    rel='icon'
+    type='image/svg+xml'
+    href='https://res.cloudinary.com/dq5nfyajn/image/upload/v1765561021/favicon_vqjudg.svg'
+  />
+
+  <!-- Config -->
+  <meta name='theme-color' content='#000000' />
+  <meta name='apple-mobile-web-app-title' content='Resources' />
+  <meta name='application-name' content='Resources' />
+  <link rel='manifest' href='/manifest.webmanifest' />
+
+  <meta
+    http-equiv='Content-Security-Policy'
+    content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    object-src 'none';
+    img-src 'self' blob: data: https://res.cloudinary.com;
+    font-src 'self';
+    worker-src 'self' blob:;
+    base-uri 'self';
+    frame-src 'self' ;
+    form-action 'self';
+    script-src-attr 'unsafe-inline';
+    upgrade-insecure-requests;"
+  />
+
+  <!-- Schema.org JSON-LD -->
+  <script is:inline type='application/ld+json' set:html={JSON.stringify(schema)} />
+</head>

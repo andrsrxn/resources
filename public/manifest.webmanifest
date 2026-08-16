@@ -1,0 +1,19 @@
+{
+  "name": "Resources | andrsrxn",
+  "short_name": "Resources",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dq5nfyajn/image/upload/v1765561022/web-app-manifest-192x192_px2uvp.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/dq5nfyajn/image/upload/v1765561022/web-app-manifest-512x512_xjfuen.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}

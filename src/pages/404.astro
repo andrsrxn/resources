@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { IconArrowRight } from '@andrsrxn/icons'
+---
+
+<Layout title='Page Not Found'>
+  <main class='-mb-40'>
+    <div class='isolate flex h-dvh flex-col items-center justify-center gap-3'>
+      <span class='text-muted-foreground tablet:text-xl desktop:text-2xl text-lg leading-none'>
+        404
+      </span>
+      <h1 class='font-heading desktop:text-7xl text-center text-6xl'>Page not found</h1>
+      <a
+        class='mt-2 flex items-center justify-center gap-1.5 text-lg underline decoration-1 underline-offset-2'
+        href='/'>
+        Return to home <IconArrowRight />
+      </a>
+    </div>
+  </main>
+</Layout>

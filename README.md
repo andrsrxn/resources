@@ -1,46 +1,59 @@
-# Astro Starter Kit: Basics
+# Resources
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+A curated hand-picked collection of hundreds of **free** resources, tools, and inspirations for developers and creators.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![Live Site](https://img.shields.io/badge/Live_Site-resources.andrsrxn.com-blue?logo=googlechrome&logoColor=white)](https://resources.andrsrxn.com)
+[![Astro](https://img.shields.io/badge/Astro-v7-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![React](https://img.shields.io/badge/React-v19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 🚀 Project Structure
+[![Resources Preview](https://res.cloudinary.com/dq5nfyajn/image/upload/v1786843106/banner_pabuhc.webp)](https://resources.andrsrxn.com)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Overview
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+[**resources.andrsrxn.com**](https://resources.andrsrxn.com) is an open-source directory of the best **free** resources across modern web engineering, product design, SEO, cloud infrastructure, and self-learning I've collected throughout the years.
 
-## 🧞 Commands
+Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is designed for speed, instant discoverability, and smooth interactions.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Features
 
-## 👀 Want to learn more?
+- **Real-time instant search**: Filter through hundreds of resources by title, categories, or tags in real time with URL query state persistence (`?s=...`).
+- **Categorized directory**: Structured into 5 main categories described below.
+- **Automated favicon fetcher**: Dedicated CLI pipeline that fetches, optimizes, and serves brand favicons locally.
+- **Astro Islands architecture**: Ultra-fast static rendering with client-side hydration only where interactivity is needed (React components).
+- **Kinetic smooth scroll**: Powered by Lenis for a smooth scrolling experience.
+- **Modern dark aesthetics**: Premium sleek dark theme with glassmorphic cards and micro-interactions.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## Resource Categories
+
+| Category        | Highlights and subcategories                                                                                                                             |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Development** | Inspiration galleries, Component sets, Animated UI components, Single purpose widgets, Charts, Custom Hooks & Utilities, Canvas & SVG Backgrounds        |
+| **Design**      | Design systems, Typography & Fonts, Free icons & Illustrations, Brand assets, Logo generators, 3D/2D Mockups, Stock Images, Audio, Image & Video editors |
+| **SEO**         | Meta tag analyzers, SERP previews, Keyword discovery, Performance audits, OpenGraph testers, Web vitals checkers                                         |
+| **Services**    | Cloud hosting, Database providers, Authentication, Analytics, Free tiers, Developer utilities                                                            |
+| **Learning**    | Interactive tutorials, CS roadmaps, Interactive CSS/JS sandboxes, Guides, Design patterns                                                                |
+
+---
+
+## Tech stack
+
+- **Framework**: [Astro](https://astro.build) (v7) with `@astrojs/react`
+- **UI library**: [React 19](https://react.dev)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) + `tailwind-animations`
+- **State and search**: [nuqs](https://nuqs.47ng.com) for URL query state synchronization
+- **Smooth scroll**: [Lenis](https://lenis.darkroom.engineering)
+- **Icons set**: `@andrsrxn/icons`
+- **Linter and formatter**: [Biome](https://biomejs.dev) & [Prettier](https://prettier.io)
+- **Package manager**: [pnpm](https://pnpm.io)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
