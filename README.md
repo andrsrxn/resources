@@ -19,7 +19,7 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 ## Features
 
 - **Real-time instant search**: Filter through hundreds of resources by title, categories, or tags in real time with URL query state persistence (`?s=...`).
-- **Custom table of contents (TOC)**: Sticky TOC with real time active section indicator and clickable list that scrolls to the section.
+- **Custom Table of Contents (TOC)**: Sticky TOC with real time active section indicator and clickable list that scrolls to the section.
 - **Categorized directory**: Structured into 5 main categories described below.
 - **Automated favicon fetcher**: Dedicated CLI pipeline that fetches, optimizes, and serves brand favicons locally.
 - **Astro Islands architecture**: Ultra-fast static rendering with client-side hydration only where interactivity is needed (React components).
@@ -28,13 +28,13 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 
 ## Resource Categories
 
-| Category        | Highlights and subcategories                                                                                                                             |
-| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Development** | Inspiration galleries, Component sets, Animated UI components, Single purpose widgets, Charts, Custom Hooks & Utilities, Canvas & SVG Backgrounds        |
-| **Design**      | Design systems, Typography & Fonts, Free icons & Illustrations, Brand assets, Logo generators, 3D/2D Mockups, Stock Images, Audio, Image & Video editors |
-| **SEO**         | Meta tag analyzers, SERP previews, Keyword discovery, Performance audits, OpenGraph testers, Web vitals checkers                                         |
-| **Services**    | Cloud hosting, Database providers, Authentication, Analytics, Free tiers, Developer utilities                                                            |
-| **Learning**    | Interactive tutorials, CS roadmaps, Interactive CSS/JS sandboxes, Guides, Design patterns                                                                |
+| Category        | Highlights and subcategories                                                                                                                                   |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Development** | Inspiration galleries, Component sets, Animated UI components, Single purpose widgets, Charts, Custom Hooks and Utilities, Canvas and SVG Backgrounds          |
+| **Design**      | Design systems, Typography and Fonts, Free icons and Illustrations, Brand assets, Logo generators, 3D/2D Mockups, Stock Images, Audio, Image and Video editors |
+| **SEO**         | Meta tag analyzers, SERP previews, Keyword discovery, Performance audits, OpenGraph testers, Web vitals checkers                                               |
+| **Services**    | Cloud hosting, Database providers, Authentication, Analytics, Free tiers, Developer utilities                                                                  |
+| **Learning**    | Interactive tutorials, CS roadmaps, Interactive CSS/JS sandboxes, Guides, Design patterns                                                                      |
 
 ## Tech stack
 
@@ -44,7 +44,7 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 - **State and search**: [nuqs](https://nuqs.47ng.com) for URL query state synchronization
 - **Smooth scroll**: [Lenis](https://lenis.darkroom.engineering)
 - **Icons set**: `@andrsrxn/icons`
-- **Linter and formatter**: [Biome](https://biomejs.dev) & [Prettier](https://prettier.io)
+- **Linter and formatter**: [Biome](https://biomejs.dev) and [Prettier](https://prettier.io)
 - **Package manager**: [pnpm](https://pnpm.io)
 
 ## License
