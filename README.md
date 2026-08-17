@@ -6,7 +6,7 @@ A curated hand-picked collection of hundreds of **free** resources, tools, and i
 [![Astro](https://img.shields.io/badge/Astro-v7-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![React](https://img.shields.io/badge/React-v19-blue?logo=react&logoColor=white)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 
 [![Resources Preview](https://res.cloudinary.com/dq5nfyajn/image/upload/v1786843106/banner_pabuhc.webp)](https://resources.andrsrxn.com)
 
@@ -49,4 +49,4 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [CC BY-NC 4.0 License](LICENSE) — free to share and adapt with attribution, but not for commercial use.
