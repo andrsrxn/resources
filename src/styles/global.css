@@ -2,6 +2,7 @@
 @import 'tailwind-animations';
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:hover);
 
 @theme inline {
   --breakpoint-mobile: 30rem;

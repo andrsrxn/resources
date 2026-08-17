@@ -143,7 +143,7 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
       <div
         ref={tocFlyoutRef}
         onMouseEnter={handleTOCMouseEnter}
-        className='bg-card pointer-events-none absolute top-1/2 right-0 grid h-max max-h-[calc(100dvh-100px)] w-max max-w-xl translate-x-4 -translate-y-1/2 gap-2 overflow-y-auto border p-4 opacity-0 transition-all duration-300 select-none group-focus-within:pointer-events-auto group-focus-within:translate-x-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100'
+        className='bg-card pointer-events-none absolute top-1/2 right-0 grid h-max max-h-[calc(100dvh-100px)] w-max max-w-xl translate-x-4 -translate-y-1/2 gap-2 overflow-y-auto overscroll-contain border p-4 opacity-0 transition-all duration-300 select-none group-focus-within:pointer-events-auto group-focus-within:translate-x-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100'
         data-lenis-prevent>
         <ul>
           {categories.map(({ category, id: catId, subcategories }) => {
