@@ -4,13 +4,11 @@ A curated hand-picked collection of hundreds of **free** resources, tools, and i
 
 [![Live Site](https://img.shields.io/badge/Live_Site-resources.andrsrxn.com-blue?logo=googlechrome&logoColor=white)](https://resources.andrsrxn.com)
 [![Astro](https://img.shields.io/badge/Astro-v7-FF5D01?logo=astro&logoColor=white)](https://astro.build)
-[![React](https://img.shields.io/badge/React-v19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![React](https://img.shields.io/badge/React-v19-blue?logo=react&logoColor=white)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [![Resources Preview](https://res.cloudinary.com/dq5nfyajn/image/upload/v1786843106/banner_pabuhc.webp)](https://resources.andrsrxn.com)
-
----
 
 ## Overview
 
@@ -18,18 +16,15 @@ A curated hand-picked collection of hundreds of **free** resources, tools, and i
 
 Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is designed for speed, instant discoverability, and smooth interactions.
 
----
-
 ## Features
 
 - **Real-time instant search**: Filter through hundreds of resources by title, categories, or tags in real time with URL query state persistence (`?s=...`).
+- **Custom table of contents (TOC)**: Sticky TOC with real time active section indicator and clickable list that scrolls to the section.
 - **Categorized directory**: Structured into 5 main categories described below.
 - **Automated favicon fetcher**: Dedicated CLI pipeline that fetches, optimizes, and serves brand favicons locally.
 - **Astro Islands architecture**: Ultra-fast static rendering with client-side hydration only where interactivity is needed (React components).
 - **Kinetic smooth scroll**: Powered by Lenis for a smooth scrolling experience.
 - **Modern dark aesthetics**: Premium sleek dark theme with glassmorphic cards and micro-interactions.
-
----
 
 ## Resource Categories
 
@@ -40,8 +35,6 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 | **SEO**         | Meta tag analyzers, SERP previews, Keyword discovery, Performance audits, OpenGraph testers, Web vitals checkers                                         |
 | **Services**    | Cloud hosting, Database providers, Authentication, Analytics, Free tiers, Developer utilities                                                            |
 | **Learning**    | Interactive tutorials, CS roadmaps, Interactive CSS/JS sandboxes, Guides, Design patterns                                                                |
-
----
 
 ## Tech stack
 
