@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils/cn'
 import type { ComponentProps } from 'react'
 import { useEffect, useRef, useState } from 'react'
+import { cn } from '@/lib/utils/cn'
 
 interface TOCSubcategory {
   name: string
@@ -18,26 +18,27 @@ interface FloatingTOCProps extends ComponentProps<'nav'> {
   categories?: TOCCategory[]
 }
 
+// biome-ignore lint/complexity/noExcessiveLinesPerFunction: necessary logic
 export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProps) => {
-  if (!categories) return null
-
   const [visibleIds, setVisibleIds] = useState<Set<string>>(new Set())
   const [activeSubId, setActiveSubId] = useState<string | null>(null)
   const tocFlyoutRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // Use a Set for O(1) category lookups inside the observer callback
-    const categoryIdSet = new Set(categories.map(c => c.id))
+    const categoryIdSet = new Set(categories?.map(c => c.id) ?? [])
     const allIds: string[] = [
       ...categoryIdSet,
-      ...categories.flatMap(c => c.subcategories.map(s => s.id)),
+      ...(categories?.flatMap(c => c.subcategories.map(s => s.id)) ?? []),
     ]
 
     const elements = allIds
       .map(id => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null)
 
-    if (elements.length === 0) return
+    if (elements.length === 0) {
+      return
+    }
 
     const visibilityMap = new Map<string, boolean>()
 
@@ -49,7 +50,9 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
 
         const currentVisible = new Set<string>()
         for (const [id, isVis] of visibilityMap.entries()) {
-          if (isVis) currentVisible.add(id)
+          if (isVis) {
+            currentVisible.add(id)
+          }
         }
         setVisibleIds(new Set(currentVisible))
 
@@ -64,14 +67,16 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
               Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top)
           )
           setActiveSubId(visibleSubElements[0]?.id ?? null)
-        } else {
-          // Fall back to last subcategory that has scrolled past the top
-          const passedSubElements = elements
-            .filter(el => !categoryIdSet.has(el.id))
-            .filter(el => el.getBoundingClientRect().top <= 120)
-
-          setActiveSubId(passedSubElements[passedSubElements.length - 1]?.id ?? null)
+          return
         }
+
+        // Fall back to last subcategory that has scrolled past the top
+        const passedSubElements = elements
+          .filter(el => !categoryIdSet.has(el.id))
+          // biome-ignore lint/style/noMagicNumbers: This offset is used to position the active subcategory in the flyout TOC
+          .filter(el => el.getBoundingClientRect().top <= 120)
+
+        setActiveSubId(passedSubElements.at(-1)?.id ?? null)
       },
       {
         rootMargin: '-60px 0px -60px 0px',
@@ -90,11 +95,17 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
   }, [categories])
 
   const handleTOCMouseEnter = () => {
-    if (!tocFlyoutRef.current || !activeSubId) return
+    if (!(tocFlyoutRef.current && activeSubId)) {
+      return
+    }
     const activeSubLink = tocFlyoutRef.current.querySelector<HTMLElement>(
       `[data-sub-id="${activeSubId}"]`
     )
     activeSubLink?.scrollIntoView({ block: 'center', behavior: 'instant' })
+  }
+
+  if (!categories) {
+    return null
   }
 
   return (
@@ -127,6 +138,8 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
       </div>
 
       {/* flyout TOC */}
+      {/** biome-ignore lint/a11y/noStaticElementInteractions: Using focus-within and hover to trigger the flyout */}
+      {/** biome-ignore lint/a11y/noNoninteractiveElementInteractions: Using focus-within and hover to trigger the flyout */}
       <div
         ref={tocFlyoutRef}
         onMouseEnter={handleTOCMouseEnter}

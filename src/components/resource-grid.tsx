@@ -2,12 +2,12 @@ import { IconCleaningBrush } from '@andrsrxn/icons'
 import type { ComponentProps } from 'react'
 import { useMemo } from 'react'
 import { Card } from '@/components/card'
+import { FloatingTOC } from '@/components/floating-toc'
 import { Heading } from '@/components/heading'
 import { RESOURCES } from '@/lib/constants/resources'
 import { useQueryState } from '@/lib/hooks/use-query-state'
 import { cn } from '@/lib/utils/cn'
 import { camelToTitleCase, capitalize, slugify } from '@/lib/utils/strings'
-import { FloatingTOC } from '@/components/floating-toc'
 
 export const ResourceGrid = ({ className, ...props }: ComponentProps<'div'>) => {
   const [search] = useQueryState('s')

@@ -19,7 +19,9 @@ interface QueryStateCustomEventDetail {
 }
 
 const getSearchParamFromUrl = (key: string): string | null => {
-  if (typeof window === 'undefined') return null
+  if (typeof window === 'undefined') {
+    return null
+  }
   const params = new URLSearchParams(window.location.search)
   return params.get(key)
 }
@@ -28,18 +30,24 @@ const updateUrlQueryParam = (
   key: string,
   value: string | null,
   historyMode: 'replace' | 'push' = 'replace',
-  scroll: boolean = false
+  scroll = false
 ) => {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined') {
+    return
+  }
 
   const url = new URL(window.location.href)
   const currentVal = url.searchParams.get(key)
 
   if (value === null || value === '') {
-    if (!url.searchParams.has(key)) return
+    if (!url.searchParams.has(key)) {
+      return
+    }
     url.searchParams.delete(key)
   } else {
-    if (currentVal === value) return
+    if (currentVal === value) {
+      return
+    }
     url.searchParams.set(key, value)
   }
 
@@ -94,26 +102,26 @@ export function useQueryState<T = string>(
     const raw = getSearchParamFromUrl(key)
     if (raw !== null) {
       const parsed = deserialize(raw)
-      setState(parsed !== null ? parsed : defaultValue)
+      setState(parsed === null ? defaultValue : parsed)
     }
     const syncFromUrl = () => {
       const currentRaw = getSearchParamFromUrl(key)
-      if (currentRaw !== null) {
-        const parsed = deserialize(currentRaw)
-        setState(parsed !== null ? parsed : defaultValue)
-      } else {
+      if (currentRaw === null) {
         setState(defaultValue)
+      } else {
+        const parsed = deserialize(currentRaw)
+        setState(parsed === null ? defaultValue : parsed)
       }
     }
     const handleCustomChange = (e: Event) => {
       const customEvent = e as CustomEvent<QueryStateCustomEventDetail>
       if (customEvent.detail && customEvent.detail.key === key) {
         const customRaw = customEvent.detail.value
-        if (customRaw !== null) {
-          const parsed = deserialize(customRaw)
-          setState(parsed !== null ? parsed : defaultValue)
-        } else {
+        if (customRaw === null) {
           setState(defaultValue)
+        } else {
+          const parsed = deserialize(customRaw)
+          setState(parsed === null ? defaultValue : parsed)
         }
       }
     }

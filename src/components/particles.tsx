@@ -82,7 +82,7 @@ export const ParticlesBackground = ({
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window === 'undefined' ? 1 : window.devicePixelRatio
   const rafID = useRef<number | null>(null)
-  const resizeTimeout = useRef<number>(null)
+  const resizeTimeout = useRef<NodeJS.Timeout>(null)
   // Pre-compute the rgb string once per color change — avoids per-frame allocation
   const rgbString = useRef<string>('')
 

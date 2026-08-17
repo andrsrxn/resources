@@ -4,9 +4,9 @@ import type { ComponentProps } from 'react'
 import { Badge } from '@/components/badge'
 import { RECOMMENDED_TAGS } from '@/lib/constants/resources'
 import { useQueryState } from '@/lib/hooks/use-query-state'
+import { cn } from '@/lib/utils/cn'
 import { getBadgeVariant } from '@/lib/utils/resources'
 import { capitalize } from '@/lib/utils/strings'
-import { cn } from '@/lib/utils/cn'
 
 export const GlobalSearch = ({ className, ...props }: ComponentProps<'div'>) => {
   const [search, setSearch] = useQueryState('s', { defaultValue: '' })
