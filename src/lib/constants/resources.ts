@@ -1683,7 +1683,13 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'FreeBuff AI',
             url: 'https://freebuff.com/',
             favicon: '/favicons/freebuff-ai.png',
-            tags: ['Vibe coding', 'Agents', 'Web', 'Desktop', 'CLI', ''],
+            tags: ['Vibe coding', 'Agents', 'Web', 'Desktop', 'CLI'],
+          },
+          {
+            title: 'EnvManager',
+            url: 'https://envmanager.com/share',
+            favicon: '/favicons/envmanager.webp',
+            tags: ['Environment variables', 'Share', 'Security'],
           },
           {
             title: 'Recordly',
@@ -1786,6 +1792,18 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['3D models', 'Image to 3D', 'Text to 3D', 'Online'],
             url: 'https://www.meshy.ai',
             favicon: '/favicons/meshy-ai.webp',
+          },
+          {
+            title: 'Vertex42',
+            url: 'https://www.vertex42.com/',
+            favicon: '/favicons/vertex42.webp',
+            tags: ['Templates', 'Spreadsheets', 'Productivity', 'Excel'],
+          },
+          {
+            title: 'Planilla Excel',
+            url: 'https://www.planillaexcel.com/plantillas',
+            favicon: '/favicons/planilla-excel.ico',
+            tags: ['Templates', 'Spreadsheets', 'Productivity', 'Excel'],
           },
         ],
       },
