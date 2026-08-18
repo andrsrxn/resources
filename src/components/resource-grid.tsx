@@ -124,7 +124,7 @@ export const ResourceGrid = ({ className, ...props }: ComponentProps<'div'>) => 
 
                           return (
                             <Card
-                              key={`${groupKey}-${subKey}-${cardId}`}
+                              key={`${cardId}`}
                               id={cardId}
                               title={item.title}
                               urlLabel={item.url}
