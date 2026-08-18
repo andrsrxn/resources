@@ -22,7 +22,7 @@ export const GlobalSearch = ({ className, ...props }: ComponentProps<'div'>) => 
         <input
           value={search || ''}
           onChange={e => setSearch(e.target.value)}
-          placeholder='Marketing, learning, development, tools...'
+          placeholder='More than 250 resources...'
           className='border-input bg-background focus-visible:ring-offset-background focus-visible:ring-ring w-full border-2 px-3 py-2 pl-10 text-base focus-visible:ring-2 focus-visible:outline-none'
         />
         {search && search.length > 1 ? (
