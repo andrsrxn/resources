@@ -16,6 +16,8 @@ A curated hand-picked collection of hundreds of **free** resources, tools, and i
 
 Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is designed for speed, instant discoverability, and smooth interactions.
 
+> This website is inspired on [desengs.com](https://desengs.com) by [MAZE](https://x.com/remvze), a list of resources for Design Engineers.
+
 ## Features
 
 - **Real-time instant search**: Filter through hundreds of resources by title, categories, or tags in real time with URL query state persistence (`?s=...`).
