@@ -253,7 +253,6 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.beautifului.dev',
             favicon: '/favicons/beautiful-ui.webp',
           },
-
           {
             title: 'BeUI',
             tags: ['Animated', 'AI', 'Agents', 'Chatbot'],
@@ -282,7 +281,24 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/gooey.png',
             tags: ['Liquid glass', 'Interactive', 'Single'],
           },
-
+          {
+            title: 'Three UI',
+            tags: ['3D', 'Interactive', 'Three.js', 'Blocks', 'Backgrounds', 'Text', 'Buttons'],
+            url: 'https://threeui.com/browse',
+            favicon: '/favicons/three-ui.svg',
+          },
+          {
+            title: 'OriginKit',
+            url: 'https://www.originkit.dev/',
+            favicon: '/favicons/originkit.webp',
+            tags: ['Sections', 'Backgrounds', 'Interactive', 'Templates', 'Gallery'],
+          },
+          {
+            title: 'UseAnimations Icons',
+            tags: ['Animated', 'Interactive', 'Online', 'Motion'],
+            url: 'https://react.useanimations.com',
+            favicon: '/favicons/react-useanimations-icons.png',
+          },
           {
             title: 'Spoiled',
             tags: ['Confidential info', 'Animated', 'Single'],
@@ -419,12 +435,29 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Audio', 'Generator', 'SFX', 'Filters', 'Effects'],
           },
           {
+            title: 'Cuelume',
+            url: 'https://cuelume.dev/',
+            favicon: '/favicons/cuelume.svg',
+            tags: ['Audio', 'Generator', 'SFX', 'Collection'],
+          },
+          {
             title: 'Web Haptics',
             url: 'https://haptics.lochie.me/',
             favicon: '/favicons/web-haptics.png',
             tags: ['Feedback', 'Sounds', 'SFX'],
           },
-
+          {
+            title: 'MapCN',
+            url: 'https://www.mapcn.dev/',
+            favicon: '/favicons/mapcn.svg',
+            tags: ['Maps', 'Interactive', 'Globe', 'Blocks'],
+          },
+          {
+            title: 'PDF Slick',
+            url: 'https://pdfslick.dev/',
+            favicon: '/favicons/pdf-slick.svg',
+            tags: ['Viewer', 'Interactive', 'Documents'],
+          },
           {
             title: 'Cookie Banner',
             tags: ['Next.js', 'JavaScript', 'Client and SSR', 'Themable'],
@@ -450,6 +483,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://frimousse.liveblocks.io',
             favicon: '/favicons/emoji-picker.svg',
             inverted: true,
+          },
+          {
+            title: 'Boneyard',
+            url: 'https://boneyard.vercel.app/overview',
+            favicon: '/favicons/boneyard.ico',
+            tags: ['Skeleton', 'Generator', 'Responsive'],
           },
           {
             title: 'Stepperize',
@@ -545,12 +584,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://tradingview.github.io/lightweight-charts',
             favicon: '/favicons/lightweight-charts.png',
           },
-          {
-            title: 'React UseAnimations Icons',
-            tags: ['Animated', 'Interactive', 'Online'],
-            url: 'https://react.useanimations.com',
-            favicon: '/favicons/react-useanimations-icons.png',
-          },
+
           {
             title: 'React Flow',
             tags: ['Diagrams', 'Editor', 'Workflow', 'Nodes', 'Graph'],
@@ -987,7 +1021,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Type Scale',
             url: 'https://typescale.com',
             favicon: '/favicons/type-scale.png',
-            tags: ['Tool', 'Type scale generator', 'Design system', ''],
+            tags: ['Tool', 'Type scale generator', 'Design system'],
           },
           {
             title: 'Fontspace',
@@ -1035,7 +1069,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Pixel Buddha',
             url: 'https://pixelbuddha.net/fonts?type=freebie',
             favicon: '/favicons/pixel-buddha-pixelbuddha-net.png',
-            tags: ['Collection', 'Display', 'Script', 'Modern', ''],
+            tags: ['Collection', 'Display', 'Script', 'Modern'],
           },
           {
             title: 'Fontmeme',
@@ -1132,7 +1166,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Design Decks',
             url: 'https://www.deck.gallery',
-            favicon: '/favicons/design-decks.png',
+            favicon: '/favicons/design-decks.webp',
             tags: ['Documents', 'Reports', 'Brand guidelines'],
           },
           {
@@ -1240,6 +1274,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://shots.so',
             favicon: '/favicons/shots.webp',
             tags: ['Open graph', 'Generator', 'Backgrounds', 'Multiple', 'Liquid glass'],
+          },
+          {
+            title: 'TextLab',
+            url: 'https://textlab.javii.tools/',
+            favicon: '/favicons/textlab.webp',
+            tags: ['Notifications', 'Messages', 'Bubbles', 'Generator', 'Comments'],
           },
           {
             title: 'Morflax Things',
@@ -1399,7 +1439,6 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://speechma.com',
             favicon: '/favicons/speechma.webp',
           },
-
           {
             title: 'Freesound',
             tags: ['Sound effects', 'Music', 'SFX'],
@@ -1698,6 +1737,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/recordlydev.webp',
           },
           {
+            title: 'VoiceBox',
+            tags: ['Clone voice', 'Open source', 'Speech', 'Audio'],
+            url: 'https://github.com/jamiepine/voicebox',
+            favicon: '/favicons/voicebox.svg',
+          },
+          {
             title: 'ComeCut',
             tags: ['CapCut alternative', 'MP4', 'web', 'desktop'],
             url: 'https://github.com/juntaosun/ComeCut',
@@ -1705,9 +1750,15 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           },
           {
             title: 'Koboyo',
-            tags: ['Canvas', 'Sketches', 'Diagrams', 'Notes', ''],
+            tags: ['Canvas', 'Sketches', 'Diagrams', 'Notes'],
             url: 'https://koboyo.com',
             favicon: '/favicons/koboyo.svg',
+          },
+          {
+            title: 'Diagrams',
+            tags: ['Whiteboard', 'Flowcharts', 'Mind maps', 'Web'],
+            url: 'https://app.diagrams.net/',
+            favicon: '/favicons/diagrams.png',
           },
           {
             title: 'Media Bunny',
@@ -1722,6 +1773,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/onelang-ide.png',
           },
           {
+            title: 'CRT Name',
+            tags: ['Subdomains', 'Index', 'DNS', 'Domains'],
+            url: 'https://crt.name/',
+            favicon: '/favicons/crt-name.webp',
+          },
+          {
             title: 'Playphrase',
             tags: ['Search phrases', 'Movies', 'Clips', 'TV'],
             url: 'https://www.playphrase.me',
@@ -1729,9 +1786,15 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           },
           {
             title: 'IPQuery',
-            tags: ['IP info', 'Geolocation', 'API'],
+            tags: ['IP info', 'Geolocation', 'HTTP', 'API'],
             url: 'https://ipquery.io',
             favicon: '/favicons/ipquery.png',
+          },
+          {
+            title: 'IP Guide',
+            tags: ['IP info', 'Geolocation', 'HTTP', 'API'],
+            url: 'https://ip.guide',
+            favicon: '/favicons/ip-guide.webp',
           },
           {
             title: 'Porkbun',

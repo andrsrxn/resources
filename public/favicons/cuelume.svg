@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Cuelume</title>
+  <defs>
+    <linearGradient id="tile" x1="32" y1="0" x2="32" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3e3e3c"/>
+      <stop offset="1" stop-color="#1a1a19"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14.5" fill="url(#tile)"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.9" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <g transform="translate(32 32) scale(0.78) translate(-32 -32)">
+    <path fill="#fbfaf9" fill-rule="evenodd" d="M17.10 19.27A15 15 0 0 1 46.90 19.27A9 9 0 0 0 50.48 25.46A15 15 0 0 1 35.57 51.26A9 9 0 0 0 28.42 51.27A15 15 0 0 1 13.53 25.46A9 9 0 0 0 17.10 19.27ZM32 24.5A7.5 7.5 0 1 0 32 39.5A7.5 7.5 0 1 0 32 24.5Z"/>
+  </g>
+</svg>
