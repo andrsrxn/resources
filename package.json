@@ -30,7 +30,7 @@
     "fetch:favicons": "node scripts/fetch-favicons.mjs"
   },
   "dependencies": {
-    "@andrsrxn/icons": "4.1.0",
+    "@andrsrxn/icons": "6.0.0",
     "@astrojs/check": "0.9.10",
     "@astrojs/react": "6.0.2",
     "@astrojs/sitemap": "3.7.3",
