@@ -1877,6 +1877,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
       general: {
         items: [
           {
+            title: 'Agent QA Docs',
+            url: 'https://vostride.com/docs/agent-qa/quickstart',
+            favicon: '/favicons/agent-qa.svg',
+            tags: ['Testing', 'Web', 'Mobile', 'CLI', 'Guides'],
+          },
+          {
             title: 'LibreríasJS',
 
             tags: [
