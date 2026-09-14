@@ -195,7 +195,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Coss UI',
             url: 'https://coss.com/ui',
-            favicon: '/favicons/coss-ui.ico',
+            favicon: '/favicons/coss-ui.webp',
             tags: ['Modern', 'Clean', 'Interactive', 'Web design'],
           },
           {
@@ -226,13 +226,13 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Shadcn IO',
             url: 'https://www.shadcn.io/components',
-            favicon: '',
+            favicon: '/favicons/shadcn-io.webp',
             tags: ['Modern', 'Clean', 'Interactive', 'Composable'],
           },
           {
             title: 'Board UI',
             url: 'https://www.boardui.com/components',
-            favicon: '',
+            favicon: '/favicons/board-ui.webp',
             tags: ['Modern', 'Clean', 'Blocks', 'Dashboard', 'Design system', 'Components'],
           },
           {
@@ -250,7 +250,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'TermCN',
             url: 'https://www.termcn.dev/',
-            favicon: '',
+            favicon: '/favicons/termcn.webp',
             tags: ['Interactive', 'TUI', 'CLI', 'Terminal', 'Modern'],
           },
           {
@@ -296,7 +296,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Gooey',
             url: 'https://gooey.jakubantalik.com',
-            favicon: '/favicons/gooey.png',
+            favicon: '/favicons/gooey.webp',
             tags: ['Liquid glass', 'Interactive', 'Single'],
           },
           {
@@ -321,7 +321,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Spoiled',
             tags: ['Confidential info', 'Animated', 'Single'],
             url: 'https://spoiled.vercel.app',
-            favicon: '/favicons/spoiled.svg',
+            favicon: '/favicons/spoiled.webp',
           },
           {
             title: 'Generative Loaders',
@@ -329,12 +329,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/generative-loaders.svg',
             tags: ['Streaming', 'Skeleton', 'Placeholders', 'Motion', 'Animated'],
           },
-          {
-            title: 'Animate UI',
-            url: 'https://animate-ui.com',
-            favicon: '',
-            tags: ['UI', 'Motion', 'Backgrounds', 'Icons', 'Text', 'Buttons', 'Effects'],
-          },
+
           {
             title: 'Vengence UI',
             tags: ['Next.js', 'Hover effects', 'Futuristic', 'Dark'],
@@ -345,12 +340,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Fancy Components',
             tags: ['Fun and weird', 'Micro-interactions', 'UI'],
             url: 'https://fancycomponents.dev',
-            favicon: '/favicons/fancy-components.png',
+            favicon: '/favicons/fancy-components.webp',
           },
           {
             title: 'Rare UI',
             url: 'https://www.rareui.com/components',
-            favicon: '',
+            favicon: '/favicons/rare-ui.svg',
             tags: ['Motion', 'UI', 'Animations', 'Unique', 'Smooth'],
           },
           {
@@ -368,7 +363,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Amicro',
             url: 'https://amicro.vercel.app/cards',
-            favicon: '',
+            favicon: '/favicons/amicro.webp',
             tags: ['Motion', 'Buttons', 'Loaders', 'Cards', 'Gallery'],
           },
           {
@@ -381,7 +376,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Animate UI Cursor',
             tags: ['Figma-like', 'Cursor', 'Following text'],
             url: 'https://animate-ui.com/docs/components/animate/cursor',
-            favicon: '/favicons/animate-ui-cursor.png',
+            favicon: '/favicons/animate-ui-cursor.webp',
           },
           {
             title: 'Motion Primitives',
@@ -422,7 +417,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Lunar UI',
             tags: ['Features section', 'Text', 'Scroll', 'Navigation', 'Buttons', 'Patterns'],
             url: 'https://lunarui.dev',
-            favicon: '/favicons/lunar-ui.png',
+            favicon: '/favicons/lunar-ui.webp',
           },
           {
             title: 'Thinking Orbs',
@@ -510,7 +505,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Shader Tool',
             tags: ['Gradient', 'Backgrounds'],
             url: 'https://shader-tool.vercel.app',
-            favicon: '/favicons/shader-tool.svg',
+            favicon: '/favicons/shader-tool.webp',
             inverted: true,
           },
           {
@@ -518,7 +513,6 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Unstyled', 'Composable'],
             url: 'https://frimousse.liveblocks.io',
             favicon: '/favicons/emoji-picker.svg',
-            inverted: true,
           },
           {
             title: 'Boneyard',
@@ -560,13 +554,13 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Driver.js',
             tags: ['Onboarding', 'Tour', 'Customizable'],
             url: 'https://driverjs.com',
-            favicon: '/favicons/driverjs.png',
+            favicon: '/favicons/driverjs.webp',
           },
           {
             title: 'Model viewer',
             tags: ['3D', 'Online', 'AR'],
             url: 'https://modelviewer.dev',
-            favicon: '/favicons/model-viewer.png',
+            favicon: '/favicons/model-viewer.webp',
           },
           {
             title: 'SoundCn',
@@ -653,7 +647,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'UseHooks TS',
             tags: ['Common use', 'DRY', 'Simple'],
             url: 'https://usehooks-ts.com/introduction',
-            favicon: '/favicons/usehooks-ts.png',
+            favicon: '/favicons/usehooks-ts.webp',
           },
           {
             title: 'Just',
@@ -665,7 +659,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Foresight',
             tags: ['UX', 'Prefetching', 'Cursor intent', 'Scroll intent'],
             url: 'https://foresightjs.com',
-            favicon: '/favicons/foresight.ico',
+            favicon: '/favicons/foresight.webp',
           },
           {
             title: 'Recent Designs Skills',
@@ -829,7 +823,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Hugeicons',
             url: 'https://hugeicons.com/icons',
-            favicon: '',
+            favicon: '/favicons/hugeicons.png',
             tags: ['Outline', 'Filled', 'Two-tone', 'Smooth', 'Customizable', 'Adaptable'],
           },
           {
@@ -976,7 +970,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Rebrand Gallery',
             url: 'https://www.rebrand.gallery',
-            favicon: '/favicons/rebrand-gallery.png',
+            favicon: '/favicons/rebrand-gallery.webp',
             tags: ['Motion', 'Animated', 'Marketing', 'Reveal'],
           },
           {
@@ -988,7 +982,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Contra',
             url: 'https://contra.com/?view=projects',
-            favicon: '/favicons/contra.png',
+            favicon: '/favicons/contra.webp',
             tags: ['Studios', 'Motion', 'Modern'],
           },
           {
@@ -1000,7 +994,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Kittl',
             url: 'https://www.kittl.com',
-            favicon: '/favicons/kittl.png',
+            favicon: '/favicons/kittl.webp',
             tags: ['Branding visuals', 'Generator', 'Merchandising', 'Showcase'],
           },
         ],
@@ -1050,7 +1044,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Calligrphr',
             url: 'https://www.calligraphr.com/es',
-            favicon: '/favicons/calligrphr.png',
+            favicon: '/favicons/calligrphr.webp',
             tags: ['Tool', 'Font generator', 'Custom fonts', 'Vectors'],
           },
           {
@@ -1116,7 +1110,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Sova Type Foundry',
             url: 'https://www.suvatypefoundry.ee',
-            favicon: '/favicons/sova-type-foundry.png',
+            favicon: '/favicons/sova-type-foundry.webp',
             tags: ['Collection', 'Display', 'Unique', 'Script', 'Handwritten'],
           },
           {
@@ -1150,7 +1144,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Coolors',
             url: 'https://coolors.co',
-            favicon: '/favicons/coolors.png',
+            favicon: '/favicons/coolors.webp',
             tags: ['Generator', 'Palette', 'Contrast checker'],
           },
           {
@@ -1162,7 +1156,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Pantone to RAL',
             url: 'https://ursanpinturas.com/conversion-pantone-ral',
-            favicon: '/favicons/pantone-to-ral.png',
+            favicon: '/favicons/pantone-to-ral.webp',
             tags: ['Converter', 'Color names', 'RAL', 'Pantone', 'Information'],
           },
           {
@@ -1184,7 +1178,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Component Gallery',
             url: 'https://component.gallery/design-systems',
-            favicon: '/favicons/component-gallery.png',
+            favicon: '/favicons/component-gallery.webp',
             tags: ['Collection', 'Companies', 'Brands', 'Links'],
           },
           {
@@ -1302,7 +1296,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'PostSpark',
             url: 'https://postspark.app/screenshot',
-            favicon: '/favicons/postspark.png',
+            favicon: '/favicons/postspark.webp',
             tags: ['Open graph', 'Generator', 'Backgrounds', 'Banner'],
           },
           {
@@ -1451,7 +1445,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Weave Silk',
             tags: ['Drawing', 'Flowing art', 'Online'],
             url: 'http://weavesilk.com',
-            favicon: '/favicons/weave-silk.ico',
+            favicon: '/favicons/weave-silk.webp',
           },
         ],
       },
@@ -1498,13 +1492,13 @@ export const RESOURCES: Record<string, ResourceGroup> = {
               'Glitch',
             ],
             url: 'https://artkit.cc',
-            favicon: '/favicons/artkit-image-editor.jpg',
+            favicon: '/favicons/artkit-image-editor.webp',
           },
           {
             title: 'FlexClip Compress Video',
             tags: ['Online', 'Customizable', 'WebM', 'MP4', 'MOV'],
             url: 'https://www.flexclip.com/es/tools/compress-video',
-            favicon: '/favicons/flexclip-compress-video.ico',
+            favicon: '/favicons/flexclip-compress-video.webp',
           },
           {
             title: 'Upscale Media',
@@ -1516,7 +1510,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Free Upscaler Video',
             tags: ['Browser', 'Upscale', 'Video', '2x', 'AI'],
             url: 'https://free.upscaler.video',
-            favicon: '/favicons/free-upscaler-video.png',
+            favicon: '/favicons/free-upscaler-video.webp',
           },
           {
             title: 'Formia',
@@ -1527,7 +1521,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Antlii',
             url: 'https://antlii.work',
-            favicon: '',
+            favicon: '/favicons/antlii.webp',
             tags: ['Tool', 'Editor', '3D', 'Animations', 'Effects', 'Unique'],
           },
           {
@@ -1543,7 +1537,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
               'Backgrounds',
             ],
             url: 'https://shaders.paper.design',
-            favicon: '/favicons/shaders-paper-design.ico',
+            favicon: '/favicons/shaders-paper-design.webp',
           },
           {
             title: 'Pixel Crash',
@@ -1572,7 +1566,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
               'Dithering',
             ],
             url: 'https://grainrad.com',
-            favicon: '/favicons/grainrad.png',
+            favicon: '/favicons/grainrad.webp',
           },
           {
             title: 'Tooooools',
@@ -1588,7 +1582,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
               'CRT',
             ],
             url: 'https://www.tooooools.app',
-            favicon: '/favicons/tooooools.ico',
+            favicon: '/favicons/tooooools.webp',
           },
           {
             title: 'PhotoRoom Background Remover',
@@ -1604,13 +1598,13 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Unicorn Studio',
             tags: ['Shaders', 'Online', 'Editor', 'Canvas', 'AI', 'MP4'],
             url: 'https://www.unicorn.studio',
-            favicon: '/favicons/unicorn-studio.png',
+            favicon: '/favicons/unicorn-studio.webp',
           },
           {
             title: 'Intangible AI',
             tags: ['Real world editing', '3D editing', 'Film', 'Advertising', 'Events', 'Games'],
             url: 'https://www.intangible.ai',
-            favicon: '/favicons/intangible-ai.png',
+            favicon: '/favicons/intangible-ai.webp',
           },
           {
             title: 'DroneStock',
@@ -1660,7 +1654,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'CrUX Vis',
             tags: ['UX report', 'Web performance'],
             url: 'https://cruxvis.withgoogle.com/#',
-            favicon: '/favicons/crux-vis.png',
+            favicon: '/favicons/crux-vis.webp',
           },
           {
             title: 'W3C Nu HTML Checker',
@@ -1672,7 +1666,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Structured Data Testing Tool',
             tags: ['JSON-LD', 'Schema Markup', 'Validation'],
             url: 'https://search.google.com/test/rich-results',
-            favicon: '/favicons/structured-data-testing-tool.png',
+            favicon: '/favicons/structured-data-testing-tool.webp',
           },
           {
             title: 'Site SEO Analyzer',
@@ -1791,6 +1785,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/comecut.svg',
           },
           {
+            title: 'Agent QA',
+            url: 'https://vostride.com/',
+            favicon: '/favicons/agent-qa.svg',
+            tags: ['Testing', 'Web', 'Mobile', 'CLI', 'AI'],
+          },
+          {
             title: 'Koboyo',
             tags: ['Canvas', 'Sketches', 'Diagrams', 'Notes'],
             url: 'https://koboyo.com',
@@ -1800,7 +1800,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Diagrams',
             tags: ['Whiteboard', 'Flowcharts', 'Mind maps', 'Web'],
             url: 'https://app.diagrams.net/',
-            favicon: '/favicons/diagrams.png',
+            favicon: '/favicons/diagrams.webp',
           },
           {
             title: 'Media Bunny',
@@ -1872,7 +1872,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'TopoExport',
             tags: ['Topography', 'Export', 'Maps', 'CAD', '2D', '3D'],
             url: 'https://topoexport.com',
-            favicon: '/favicons/topoexport.png',
+            favicon: '/favicons/topoexport.webp',
           },
           {
             title: 'SunEarth Tools',
@@ -1956,7 +1956,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Tutorials', ' Libraries', 'Motion', 'Animated', 'Modern'],
 
             url: 'https://tympanus.net/codrops/category/tutorials',
-            favicon: '/favicons/codrops.png',
+            favicon: '/favicons/codrops.webp',
           },
           {
             title: 'Gutenberg',
@@ -2015,7 +2015,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           {
             title: 'Google SEO Starter Guide',
             url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide',
-            favicon: '/favicons/google-seo-starter-guide.png',
+            favicon: '/favicons/google-seo-starter-guide.webp',
             tags: ['SEO', 'Google', 'Guide', 'Fundamentals'],
           },
           {
@@ -2108,6 +2108,7 @@ export const FEATURE_TAGS: Record<string, BadgeProps['variant']> = {
   marketing: 'green',
   learning: 'cyan',
   development: 'indigo',
+  cli: 'slate',
   devices: 'slate',
   tools: 'lime',
   branding: 'red',
