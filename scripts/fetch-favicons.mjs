@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import fsSync from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import sharp from 'sharp'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -21,19 +22,55 @@ function slugify(text) {
   )
 }
 
-function getExtFromContentType(contentType, defaultExt = 'png') {
-  if (!contentType) return defaultExt
-  const ct = contentType.toLowerCase()
-  if (ct.includes('svg')) return 'svg'
-  if (ct.includes('webp')) return 'webp'
-  if (ct.includes('png')) return 'png'
-  if (ct.includes('x-icon') || ct.includes('vnd.microsoft.icon') || ct.includes('ico')) return 'ico'
-  if (ct.includes('jpeg') || ct.includes('jpg')) return 'jpg'
-  if (ct.includes('gif')) return 'gif'
-  return defaultExt
+async function processToWebp(buffer) {
+  return await sharp(buffer)
+    .resize(64, 64, { fit: 'cover', position: 'center' })
+    .webp({ quality: 80 })
+    .toBuffer()
 }
 
-async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
+function generateInitialSvg(title) {
+  const cleanTitle = (title || '').trim()
+  const char = cleanTitle[0] || '?'
+  const initial = char
+    .toUpperCase()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+
+  const colors = [
+    '#6366f1',
+    '#8b5cf6',
+    '#ec4899',
+    '#f43f5e',
+    '#ef4444',
+    '#f97316',
+    '#f59e0b',
+    '#10b981',
+    '#06b6d4',
+    '#0ea5e9',
+    '#3b82f6',
+  ]
+  let hash = 0
+  for (let i = 0; i < cleanTitle.length; i++) {
+    hash = (hash << 5) - hash + cleanTitle.charCodeAt(i)
+    hash |= 0
+  }
+  const bg = colors[Math.abs(hash) % colors.length]
+
+  return `<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="16" fill="${bg}"/>
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700">${initial}</text>
+</svg>`
+}
+
+async function generateInitialWebp(title) {
+  const svg = generateInitialSvg(title)
+  return await processToWebp(Buffer.from(svg))
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = 4000) {
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs)
   try {
@@ -53,7 +90,7 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
   }
 }
 
-async function tryFetchImage(url) {
+async function tryFetchImageBuffer(url) {
   try {
     const res = await fetchWithTimeout(url)
     if (!res.ok) return null
@@ -63,17 +100,7 @@ async function tryFetchImage(url) {
     }
     const buffer = Buffer.from(await res.arrayBuffer())
     if (buffer.length < 40) return null
-
-    let ext = getExtFromContentType(contentType, '')
-    if (!ext) {
-      const pathnameExt = path.extname(new URL(url).pathname).replace('.', '').toLowerCase()
-      if (['png', 'ico', 'svg', 'webp', 'jpg', 'jpeg'].includes(pathnameExt)) {
-        ext = pathnameExt === 'jpeg' ? 'jpg' : pathnameExt
-      } else {
-        ext = 'png'
-      }
-    }
-    return { buffer, ext }
+    return buffer
   } catch {
     return null
   }
@@ -109,7 +136,7 @@ function extractFaviconLinks(html, baseUrl) {
   return iconLinks.map(i => i.url)
 }
 
-async function fetchFavicon(item) {
+async function fetchFaviconBuffer(item) {
   const targetUrl = item.url
   let hostname = ''
   let origin = ''
@@ -121,88 +148,74 @@ async function fetchFavicon(item) {
     return null
   }
 
-  // 1. Try HTML scraping for high-res icons (SVG, Apple Touch Icon, etc.)
+  // 1. Google S2 Favicon API (128px PNG)
   try {
-    const pageRes = await fetchWithTimeout(targetUrl, {
-      headers: {
-        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      },
-    }, 5000)
+    const googleUrl = `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(targetUrl)}&sz=128`
+    const buf = await tryFetchImageBuffer(googleUrl)
+    if (buf && buf.length > 500) return buf
+  } catch {}
+
+  // 2. DuckDuckGo Favicon API
+  try {
+    const ddgUrl = `https://icons.duckduckgo.com/ip3/${hostname}.ico`
+    const buf = await tryFetchImageBuffer(ddgUrl)
+    if (buf && buf.length > 300) return buf
+  } catch {}
+
+  // 3. Direct origin /favicon.ico
+  try {
+    const directUrl = `${origin}/favicon.ico`
+    const buf = await tryFetchImageBuffer(directUrl)
+    if (buf) return buf
+  } catch {}
+
+  // 4. IconHorse API
+  try {
+    const iconHorseUrl = `https://icon.horse/icon/${hostname}`
+    const buf = await tryFetchImageBuffer(iconHorseUrl)
+    if (buf && buf.length > 300) return buf
+  } catch {}
+
+  // 5. HTML scraping for high-res icons (SVG, Apple Touch Icon)
+  try {
+    const pageRes = await fetchWithTimeout(
+      targetUrl,
+      { headers: { Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' } },
+      3000
+    )
 
     if (pageRes.ok) {
       const html = await pageRes.text()
       const iconCandidates = extractFaviconLinks(html, targetUrl)
       for (const iconUrl of iconCandidates) {
-        const img = await tryFetchImage(iconUrl)
-        if (img) return img
+        const buf = await tryFetchImageBuffer(iconUrl)
+        if (buf) return buf
       }
     }
-  } catch {}
-
-  // 2. Try Google S2 Favicon API (returns high quality 128px PNG)
-  try {
-    const googleFaviconUrl = `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(targetUrl)}&sz=128`
-    const img = await tryFetchImage(googleFaviconUrl)
-    if (img) return img
-  } catch {}
-
-  // 3. Try direct origin /favicon.ico
-  try {
-    const directFaviconUrl = `${origin}/favicon.ico`
-    const img = await tryFetchImage(directFaviconUrl)
-    if (img) return img
-  } catch {}
-
-  // 4. Try IconHorse API
-  try {
-    const iconHorseUrl = `https://icon.horse/icon/${hostname}`
-    const img = await tryFetchImage(iconHorseUrl)
-    if (img) return img
-  } catch {}
-
-  // 5. Try unavatar.io
-  try {
-    const unavatarUrl = `https://unavatar.io/${hostname}`
-    const img = await tryFetchImage(unavatarUrl)
-    if (img) return img
-  } catch {}
-
-  // 6. Try DuckDuckGo Favicon API
-  try {
-    const ddgFaviconUrl = `https://icons.duckduckgo.com/ip3/${hostname}.ico`
-    const img = await tryFetchImage(ddgFaviconUrl)
-    if (img) return img
   } catch {}
 
   return null
 }
 
-function checkExistingFaviconFile(item, slug) {
-  // 1. If item already has a favicon path defined, check if that file exists in public/
+async function getExistingLocalBuffer(item, slug) {
   if (item.favicon && typeof item.favicon === 'string') {
-    const relativeClean = item.favicon.startsWith('/') ? item.favicon.slice(1) : item.favicon
-    const fullPath = path.join(publicDir, relativeClean)
+    const relPath = item.favicon.startsWith('/') ? item.favicon.slice(1) : item.favicon
+    const fullPath = path.join(publicDir, relPath)
     if (fsSync.existsSync(fullPath)) {
       try {
-        const stat = fsSync.statSync(fullPath)
-        if (stat.size > 0) {
-          return item.favicon.startsWith('/') ? item.favicon : `/${item.favicon}`
-        }
+        const buf = await fs.readFile(fullPath)
+        if (buf.length > 0) return buf
       } catch {}
     }
   }
 
-  // 2. Check if a favicon with matching slug exists in public/favicons/
-  const possibleExtensions = ['svg', 'png', 'ico', 'webp', 'jpg', 'jpeg']
-  for (const ext of possibleExtensions) {
-    const fileName = `${slug}.${ext}`
-    const fullPath = path.join(publicFaviconsDir, fileName)
+  const exts = ['svg', 'png', 'ico', 'jpg', 'jpeg', 'webp']
+  for (const ext of exts) {
+    const fullPath = path.join(publicFaviconsDir, `${slug}.${ext}`)
     if (fsSync.existsSync(fullPath)) {
       try {
-        const stat = fsSync.statSync(fullPath)
-        if (stat.size > 0) {
-          return `/favicons/${fileName}`
-        }
+        const buf = await fs.readFile(fullPath)
+        if (buf.length > 0) return buf
       } catch {}
     }
   }
@@ -211,23 +224,17 @@ function checkExistingFaviconFile(item, slug) {
 }
 
 async function main() {
-  console.log('--- Starting Favicon Fetcher ---')
-
   if (!fsSync.existsSync(publicFaviconsDir)) {
     await fs.mkdir(publicFaviconsDir, { recursive: true })
   }
 
-  // Read original source file content
   const originalCode = await fs.readFile(resourcesFilePath, 'utf8')
-
-  // Import resources dynamically
   const resourcesModule = await import(`file://${resourcesFilePath}?t=${Date.now()}`)
   const resources = resourcesModule.RESOURCES
 
-  // Collect all items
   const items = []
-  for (const [sectionKey, section] of Object.entries(resources)) {
-    for (const [categoryKey, category] of Object.entries(section.categories || {})) {
+  for (const [, section] of Object.entries(resources)) {
+    for (const [, category] of Object.entries(section.categories || {})) {
       for (const item of category.items || []) {
         if (item.url) {
           items.push(item)
@@ -236,13 +243,32 @@ async function main() {
     }
   }
 
-  console.log(`Found ${items.length} items to check.`)
-
   const slugToUrl = new Map()
   const itemFaviconMap = new Map()
-  let completed = 0
-  let skippedCount = 0
-  let downloadedCount = 0
+  let totalCreated = 0
+  let totalSkipped = 0
+
+  function checkFaviconPathExists(faviconPath) {
+    if (!faviconPath || typeof faviconPath !== 'string' || faviconPath.trim() === '') {
+      return false
+    }
+    const relPath = faviconPath.startsWith('/') ? faviconPath.slice(1) : faviconPath
+    const fullPath = path.join(publicDir, relPath)
+    if (fsSync.existsSync(fullPath)) {
+      try {
+        const stat = fsSync.statSync(fullPath)
+        return stat.size > 0
+      } catch {}
+    }
+    return false
+  }
+
+  function shouldProcessItem(item) {
+    if (!item.favicon || typeof item.favicon !== 'string' || item.favicon.trim() === '') {
+      return true
+    }
+    return !checkFaviconPathExists(item.favicon)
+  }
 
   function getUniqueSlug(item) {
     const baseSlug = slugify(item.title)
@@ -250,9 +276,17 @@ async function main() {
       slugToUrl.set(baseSlug, item.url)
       return baseSlug
     }
-    if (slugToUrl.get(baseSlug) === item.url) {
+    const existingUrl = slugToUrl.get(baseSlug)
+    if (existingUrl === item.url) {
       return baseSlug
     }
+
+    if (shouldProcessItem(item)) {
+      console.warn(
+        `Warning: "${item.title}" (${item.url}) shares the exact name "${baseSlug}" with another item (${existingUrl}). Consider changing the name or setting the same favicon path as the existing one.`
+      )
+    }
+
     try {
       const host = new URL(item.url).hostname.replace(/[^a-z0-9]/gi, '-')
       const uniqueSlug = `${baseSlug}-${host}`
@@ -265,99 +299,116 @@ async function main() {
     }
   }
 
+  // Pre-register existing items whose favicon files actually exist into slugToUrl map
+  for (const item of items) {
+    if (!shouldProcessItem(item)) {
+      const baseSlug = slugify(item.title)
+      if (!slugToUrl.has(baseSlug)) {
+        slugToUrl.set(baseSlug, item.url)
+      }
+    }
+  }
+
   const queue = [...items]
-  const CONCURRENCY = 12
+  const CONCURRENCY = 16
 
   async function worker() {
     while (queue.length > 0) {
       const item = queue.shift()
       if (!item) break
 
-      const slug = getUniqueSlug(item)
+      // Skip items that have a favicon set AND the file exists on disk
+      if (!shouldProcessItem(item)) {
+        totalSkipped++
+        continue
+      }
 
-      // Reused from current run if same URL was already processed
       if (itemFaviconMap.has(item.url)) {
-        completed++
-        console.log(`[${completed}/${items.length}] Reused in-memory: ${item.title} -> ${itemFaviconMap.get(item.url)}`)
+        totalSkipped++
         continue
       }
 
-      // Check if favicon already exists in public folder -> SKIP downloading
-      const existingFaviconPath = checkExistingFaviconFile(item, slug)
-      if (existingFaviconPath) {
-        itemFaviconMap.set(item.url, existingFaviconPath)
-        completed++
-        skippedCount++
-        console.log(`[${completed}/${items.length}] Skipped (already exists): ${item.title} -> ${existingFaviconPath}`)
-        continue
+      const slug = getUniqueSlug(item)
+      const targetFileName = `${slug}.webp`
+      const targetFilePath = path.join(publicFaviconsDir, targetFileName)
+      const faviconUrl = `/favicons/${targetFileName}`
+
+      // If target webp image already exists on disk -> do NOT fetch, just set path
+      if (fsSync.existsSync(targetFilePath)) {
+        try {
+          const stat = fsSync.statSync(targetFilePath)
+          if (stat.size > 0) {
+            itemFaviconMap.set(item.url, faviconUrl)
+            totalSkipped++
+            continue
+          }
+        } catch {}
       }
 
-      // Download only if not present
-      try {
-        const result = await fetchFavicon(item)
-        if (result && result.buffer) {
-          const fileName = `${slug}.${result.ext}`
-          const filePath = path.join(publicFaviconsDir, fileName)
-          await fs.writeFile(filePath, result.buffer)
-          const faviconPath = `/favicons/${fileName}`
-          itemFaviconMap.set(item.url, faviconPath)
-          completed++
-          downloadedCount++
-          console.log(`[${completed}/${items.length}] Downloaded: ${item.title} -> ${faviconPath} (${result.buffer.length} B)`)
-        } else {
-          completed++
-          console.warn(`[${completed}/${items.length}] Could not fetch icon for: ${item.title} (${item.url})`)
+      // If file does not exist at all and favicon URL is empty string -> fetch/generate
+      let webpBuffer = null
+
+      const localBuf = await getExistingLocalBuffer(item, slug)
+      if (localBuf) {
+        try {
+          webpBuffer = await processToWebp(localBuf)
+        } catch {}
+      }
+
+      if (!webpBuffer) {
+        const fetchedBuf = await fetchFaviconBuffer(item)
+        if (fetchedBuf) {
+          try {
+            webpBuffer = await processToWebp(fetchedBuf)
+          } catch {}
         }
-      } catch (err) {
-        completed++
-        console.error(`[${completed}/${items.length}] Error fetching for ${item.title}: ${err.message}`)
+      }
+
+      if (!webpBuffer) {
+        try {
+          webpBuffer = await generateInitialWebp(item.title)
+        } catch {}
+      }
+
+      if (webpBuffer) {
+        await fs.writeFile(targetFilePath, webpBuffer)
+        itemFaviconMap.set(item.url, faviconUrl)
+        totalCreated++
+        console.log('Created: ' + targetFileName)
       }
     }
   }
 
   await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()))
 
-  console.log(`\nSummary: ${skippedCount} already existed (skipped), ${downloadedCount} newly downloaded.`)
-  console.log('--- Updating resources.ts with favicon attributes if needed ---')
-
   let updatedContent = originalCode
   const newlineChar = originalCode.includes('\r\n') ? '\r\n' : '\n'
 
-  for (const item of items) {
-    const faviconPath = itemFaviconMap.get(item.url)
-    if (!faviconPath) continue
+  updatedContent = updatedContent.replace(
+    /([ \t]*url:\s*['"]([^'"]+)['"],?\r?\n)([ \t]*favicon:\s*['"][^'"]*['"],?\r?\n)?/g,
+    (match, urlLineWithIndent, url) => {
+      const faviconPath = itemFaviconMap.get(url)
+      if (!faviconPath) return match
 
-    const escapedUrl = item.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      const indent = urlLineWithIndent.match(/^[ \t]*/)[0]
+      const cleanUrlLine = urlLineWithIndent.trimEnd()
+      const urlLineWithComma = cleanUrlLine.endsWith(',') ? cleanUrlLine : `${cleanUrlLine},`
 
-    // 1. Check if a favicon attribute already exists directly below the url attribute
-    const existingFaviconRegex = new RegExp(
-      `(url:\\s*['"]${escapedUrl}['"],?\\r?\\n)([ \\t]*)favicon:\\s*['"][^'"]*['"]`,
-      'g'
-    )
-
-    if (existingFaviconRegex.test(updatedContent)) {
-      updatedContent = updatedContent.replace(
-        existingFaviconRegex,
-        `$1$2favicon: '${faviconPath}'`
-      )
-    } else {
-      // 2. Insert favicon attribute right below url attribute
-      const urlLineRegex = new RegExp(`([ \\t]*)(url:\\s*['"]${escapedUrl}['"],?)(\\r?\\n)`, 'g')
-      updatedContent = updatedContent.replace(urlLineRegex, (match, indent, urlLine) => {
-        const withComma = urlLine.endsWith(',') ? urlLine : `${urlLine},`
-        return `${indent}${withComma}${newlineChar}${indent}favicon: '${faviconPath}',${newlineChar}`
-      })
+      return `${urlLineWithComma}${newlineChar}${indent}favicon: '${faviconPath}',${newlineChar}`
     }
-  }
+  )
 
   if (updatedContent !== originalCode) {
     await fs.writeFile(resourcesFilePath, updatedContent, 'utf8')
-    console.log(`Updated ${resourcesFilePath}`)
-  } else {
-    console.log('No changes needed in resources.ts (all attributes up to date).')
   }
 
-  console.log('Done!')
+  console.log(`
+  =========================================
+  Total created: ${totalCreated}
+  Total skipped: ${totalSkipped}
+  Total favicons: ${items.length}
+  =========================================
+  `)
 }
 
 main().catch(err => {
