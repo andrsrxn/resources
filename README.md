@@ -2,7 +2,6 @@
 
 A curated hand-picked collection of hundreds of **free** resources, tools, and inspirations for developers and creators.
 
-[![Live Site](https://img.shields.io/badge/Live_Site-resources.andrsrxn.com-blue?logo=googlechrome&logoColor=white)](https://resources.andrsrxn.com)
 [![Astro](https://img.shields.io/badge/Astro-v7-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![React](https://img.shields.io/badge/React-v19-blue?logo=react&logoColor=white)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)

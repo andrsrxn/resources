@@ -224,6 +224,18 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/preline.webp',
           },
           {
+            title: 'Shadcn IO',
+            url: 'https://www.shadcn.io/components',
+            favicon: '',
+            tags: ['Modern', 'Clean', 'Interactive', 'Composable'],
+          },
+          {
+            title: 'Board UI',
+            url: 'https://www.boardui.com/components',
+            favicon: '',
+            tags: ['Modern', 'Clean', 'Blocks', 'Dashboard', 'Design system', 'Components'],
+          },
+          {
             title: 'Free Frontend',
             tags: ['Demo and code', 'CSS', 'HTML', 'JavaScript'],
             url: 'https://freefrontend.com',
@@ -234,6 +246,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.shadcnblocks.com/blocks',
             favicon: '/favicons/shadcn-blocks.png',
             tags: ['By category', 'Modern', 'Minimalistic'],
+          },
+          {
+            title: 'TermCN',
+            url: 'https://www.termcn.dev/',
+            favicon: '',
+            tags: ['Interactive', 'TUI', 'CLI', 'Terminal', 'Modern'],
           },
           {
             title: 'Devl',
@@ -312,6 +330,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Streaming', 'Skeleton', 'Placeholders', 'Motion', 'Animated'],
           },
           {
+            title: 'Animate UI',
+            url: 'https://animate-ui.com',
+            favicon: '',
+            tags: ['UI', 'Motion', 'Backgrounds', 'Icons', 'Text', 'Buttons', 'Effects'],
+          },
+          {
             title: 'Vengence UI',
             tags: ['Next.js', 'Hover effects', 'Futuristic', 'Dark'],
             url: 'https://www.vengenceui.com',
@@ -324,6 +348,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/fancy-components.png',
           },
           {
+            title: 'Rare UI',
+            url: 'https://www.rareui.com/components',
+            favicon: '',
+            tags: ['Motion', 'UI', 'Animations', 'Unique', 'Smooth'],
+          },
+          {
             title: 'Interior UI',
             url: 'https://www.interior.dev',
             favicon: '/favicons/interior-ui.svg',
@@ -334,6 +364,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.fluidfunctionalism.com/docs',
             favicon: '/favicons/fluid-functionalism.png',
             tags: ['Micro-interactions', 'Modern', 'UX', 'Motion'],
+          },
+          {
+            title: 'Amicro',
+            url: 'https://amicro.vercel.app/cards',
+            favicon: '',
+            tags: ['Motion', 'Buttons', 'Loaders', 'Cards', 'Gallery'],
           },
           {
             title: 'BadtzUI Particles',
@@ -1487,6 +1523,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://formia.so',
             favicon: '/favicons/formia.webp',
             tags: ['Tool', 'Editor', '3D logos', 'Texture', 'Metal', 'Liquid'],
+          },
+          {
+            title: 'Antlii',
+            url: 'https://antlii.work',
+            favicon: '',
+            tags: ['Tool', 'Editor', '3D', 'Animations', 'Effects', 'Unique'],
           },
           {
             title: 'Shaders Paper Design',
