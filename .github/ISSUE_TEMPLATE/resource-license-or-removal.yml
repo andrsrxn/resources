@@ -1,0 +1,58 @@
+name: Resource license or removal request
+description: Request to remove a resource or specify custom licensing/attribution for brand assets
+title: '[Request]: '
+labels: ['resource request', 'triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contacting us. If you are a resource owner or representative and wish to request removal of a resource or add specific licensing/attribution for a logo or brand asset, please fill out the form below.
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      description: What type of request are you submitting?
+      options:
+        - Request removal of a resource
+        - Request custom license or attribution for brand asset/logo
+        - Update resource details or URL
+    validations:
+      required: true
+
+  - type: input
+    id: resource_name
+    attributes:
+      label: Resource title and URL
+      description: Provide the title and URL of the resource listed on resources.andrsrxn.com
+      placeholder: e.g., Example Tool (https://example.com)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ownership
+    attributes:
+      label: Ownership/representation
+      description: Are you the owner or authorized representative of this resource?
+      options:
+        - Yes, I am the owner or authorized representative
+        - No, but reporting an issue on behalf of the project
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Request details and licensing information
+      description: Please describe your request in detail. If requesting a custom license or attribution, provide the text or URL to the license.
+      placeholder: Describe why you want the resource removed or state the licensing requirements...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm that the information provided above is accurate.
+          required: true

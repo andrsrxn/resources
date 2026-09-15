@@ -27,15 +27,15 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 - **Kinetic smooth scroll**: Powered by Lenis for a smooth scrolling experience.
 - **Modern dark aesthetics**: Premium sleek dark theme with glassmorphic cards and micro-interactions.
 
-## Resource Categories
+## Resource categories
 
-| Category        | Highlights and subcategories                                                                                                                                   |
-| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Development** | Inspiration galleries, Component sets, Animated UI components, Single purpose widgets, Charts, Custom Hooks and Utilities, Canvas and SVG Backgrounds          |
-| **Design**      | Design systems, Typography and Fonts, Free icons and Illustrations, Brand assets, Logo generators, 3D/2D Mockups, Stock Images, Audio, Image and Video editors |
-| **SEO**         | Meta tag analyzers, SERP previews, Keyword discovery, Performance audits, OpenGraph testers, Web vitals checkers                                               |
-| **Services**    | Cloud hosting, Database providers, Authentication, Analytics, Free tiers, Developer utilities                                                                  |
-| **Learning**    | Interactive tutorials, CS roadmaps, Interactive CSS/JS sandboxes, Guides, Design patterns                                                                      |
+| Section           | Description                                                                                                                       |
+| :---------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| **`development`** | Code tools, UI component libraries, widgets, canvas/SVG generators, animations and other development-focused resources.           |
+| **`design`**      | Visual assets, fonts, icons, illustrations, 3D/2D mockups, stock media, and other design-focused resources.                       |
+| **`seo`**         | Search engine optimization tools, web vitals checkers, SERP previews, and other SEO-related resources.                            |
+| **`services`**    | Interactive tools, cloud services, DBs, auth providers, hosting utilities, developer tools, and other service-oriented resources. |
+| **`learning`**    | "Read-only" educational material, guides, roadmaps, tutorials, and other learning-focused resources.                              |
 
 ## Tech stack
 
@@ -47,6 +47,16 @@ Built with **Astro 7**, **React 19**, and **Tailwind CSS v4**, this website is d
 - **Icons set**: `@andrsrxn/icons`
 - **Linter and formatter**: [Biome](https://biomejs.dev) and [Prettier](https://prettier.io)
 - **Package manager**: [pnpm](https://pnpm.io)
+
+## Contributing
+
+Contributions are welcome! Before submitting a Pull Request, please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide for guidelines, category rules, and instructions on running the automated favicon pipeline.
+
+## Brand assets, licensing and removal requests
+
+All brand logos, trademarks, and favicons belong to their respective owners and are used solely for identification and navigation.
+
+If you are a resource owner or representative and wish to request removal of your resource, or specify a custom license/attribution for a brand asset, please open an issue using the [Resource License or Removal Request](https://github.com/andrsrxn/resources/issues/new?template=resource-license-or-removal.yml) template.
 
 ## License
 
