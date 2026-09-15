@@ -24,10 +24,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "biome check",
-    "lint:check": "turbo run lint:check",
+    "lint:check": "biome ci && echo Lint finished.",
     "format": "prettier --write . && echo Format finished.",
     "format:check": "prettier --check . && echo Format finished.",
-    "type:check": "turbo run type:check",
+    "type:check": "tsc --noEmit && echo Type check finished.",
     "astro": "astro",
     "fetch:favicons": "node scripts/fetch-favicons.mjs"
   },
