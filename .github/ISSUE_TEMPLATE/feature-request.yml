@@ -1,6 +1,6 @@
 name: Feature request
 description: Suggest an idea or improvement for resources.andrsrxn.com
-title: '[Feature]: '
+title: 'Feature: '
 labels: ['enhancement', 'triage']
 body:
   - type: markdown
