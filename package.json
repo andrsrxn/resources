@@ -24,9 +24,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "biome check",
-    "format": "prettier . --write",
+    "lint:check": "turbo run lint:check",
+    "format": "prettier --write . && echo Format finished.",
+    "format:check": "prettier --check . && echo Format finished.",
+    "type:check": "turbo run type:check",
     "astro": "astro",
-    "typecheck": "tsc",
     "fetch:favicons": "node scripts/fetch-favicons.mjs"
   },
   "dependencies": {
