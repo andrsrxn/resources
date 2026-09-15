@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest an idea or improvement for resources.andrsrxn.com
+title: '[Feature]: '
+labels: ['enhancement', 'triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an improvement! Please fill out the fields below. Note: if you want to submit a new resource to the collection, please open a Pull Request following `CONTRIBUTING.md` instead of a feature request.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature summary
+      description: A clear and concise description of the feature or improvement you would like to see.
+      placeholder: Describe the feature or improvement...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement/use case
+      description: Is your feature request related to a problem or limitation?
+      placeholder: I am always frustrated when.../It would be easier to find resources if...
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed solution
+      description: Describe the solution or user experience you would like to see.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe any alternative solutions or features you have considered.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have verified that this feature is not already suggested in existing issues.
+          required: true
