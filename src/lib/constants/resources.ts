@@ -27,12 +27,6 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Animated', 'Motion', 'Unique', 'Experience', 'Interactive'],
           },
           {
-            title: 'Recent Designs',
-            url: 'https://recent.design',
-            favicon: '/favicons/recent-designs.webp',
-            tags: ['Animated', 'Motion', 'Unique', 'Experience', 'Interactive'],
-          },
-          {
             title: 'Toolfolio',
             url: 'https://toolfolio.io',
             favicon: '/favicons/toolfolio.webp',
