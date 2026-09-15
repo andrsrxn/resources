@@ -1,6 +1,6 @@
 name: Resource license or removal request
 description: Request to remove a resource or specify custom licensing/attribution for brand assets
-title: 'Request: '
+title: '[Request]: '
 labels: ['resource request', 'triage']
 body:
   - type: markdown

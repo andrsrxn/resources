@@ -1,6 +1,6 @@
 name: Bug report
 description: Report a bug or unintended behavior on resources.andrsrxn.com
-title: 'Bug: '
+title: '[Bug]: '
 labels: ['bug', 'triage']
 body:
   - type: markdown
