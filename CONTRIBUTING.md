@@ -63,6 +63,9 @@ This script will automatically:
 - Resize it to **64x64px** and convert it to `.webp` format in `public/favicons/`.
 - Update `resources.ts` with the generated path (e.g. `favicon: '/favicons/example-tool.webp'`).
 
+> **Notice**: After this step, verify that the favicon is correctly displayed on the website by running `pnpm dev` and checking the resource page.
+> If the favicon is white or mostly white, set `inverted: true` in the resource object.
+
 ### Step 4: License and brand assets (if applicable)
 
 If the resource logo or icon requires a specific custom license or attribution, add a markdown file on `public/licenses`:
