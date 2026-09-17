@@ -1810,6 +1810,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Environment variables', 'Share', 'Security'],
           },
           {
+            title: 'PitchHut',
+            url: 'https://www.pitchhut.com',
+            favicon: '/favicons/pitchhut.webp',
+            tags: ['Community', 'Projects', 'Discover', 'Open-source', 'Social media', 'Boost'],
+          },
+          {
             title: 'Recordly',
             tags: ['Screen recording', 'Desktop', 'Windows', 'Mac', 'Open source'],
             url: 'https://recordly.dev',
