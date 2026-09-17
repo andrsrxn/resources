@@ -21,7 +21,7 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.google(),
-      name: 'Instrument Sans',
+      name: 'Geist',
       display: 'swap',
       subsets: ['latin'],
       styles: ['normal'],
