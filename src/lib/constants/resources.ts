@@ -1671,7 +1671,6 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://kling.ai/app/video/new',
             favicon: '/favicons/kling-ai.webp',
           },
-          // AÑADIR LOS DEMÁS, skill, ver plugin de figma, y react native
         ],
       },
     },
