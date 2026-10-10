@@ -235,7 +235,18 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/board-ui.webp',
             tags: ['Modern', 'Clean', 'Blocks', 'Dashboard', 'Design system', 'Components'],
           },
-
+          {
+            title: 'Shadcn M3e',
+            url: 'https://shadcn-m3e.crystaworld.dev/',
+            favicon: '/favicons/shadcn-m3e.webp',
+            tags: ['MaterialUI', 'Clean', 'Modern', 'Design system', 'Components'],
+          },
+          {
+            title: 'HextaUI',
+            url: 'https://hextaui.com/blocks',
+            favicon: '/favicons/hextaui.webp',
+            tags: ['Modern', 'Clean', 'Blocks', 'Dashboard', 'AI'],
+          },
           {
             title: 'Free Frontend',
             tags: ['Demo and code', 'CSS', 'HTML', 'JavaScript'],
@@ -259,6 +270,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.termcn.dev/',
             favicon: '/favicons/termcn.webp',
             tags: ['Interactive', 'TUI', 'CLI', 'Terminal', 'Modern'],
+          },
+          {
+            title: 'Efferd',
+            url: 'https://www.efferd.com/',
+            favicon: '/favicons/efferd.webp',
+            tags: ['Blocks', 'UI', 'Modern', 'Clean', 'Minimal'],
           },
           {
             title: 'Devl',
@@ -323,6 +340,24 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Blocks', 'Modern', 'Toolkits', 'GSAP', 'Motion', 'Sections'],
             url: 'https://paceui.com/',
             favicon: '/favicons/pace-ui.webp',
+          },
+          {
+            title: 'Bencho',
+            url: 'https://bencho.dev/',
+            favicon: '/favicons/bencho.webp',
+            tags: ['Motion', 'Interactive', 'UI', 'UX', 'Unique', 'Modern'],
+          },
+          {
+            title: 'Ascii Rest',
+            tags: ['Art', 'Banners', 'Background', 'Animated', 'Bento', 'Charts'],
+            url: 'https://ascii.rest/',
+            favicon: '/favicons/ascii-rest.webp',
+          },
+          {
+            title: 'Use Layouts',
+            url: 'https://uselayouts.com/browse',
+            favicon: '/favicons/use-layouts.webp',
+            tags: ['Cards', 'Animated', 'Interactive', 'Sections', 'UX'],
           },
           {
             title: 'OriginKit',
@@ -477,6 +512,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Generator', 'Avatars', 'Minimalistic', 'Gradient'],
             url: 'https://avatars.outpacestudios.com',
             favicon: '/favicons/outpace-avatars.webp',
+          },
+          {
+            title: 'Bencho Sounds',
+            url: 'https://bencho.dev/sounds',
+            favicon: '/favicons/bencho-sounds.webp',
+            tags: ['Audio', 'Collection', 'SFX', 'Effects', 'UI'],
           },
           {
             title: 'Sound effect',
@@ -702,13 +743,13 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Autoskills.sh',
             url: 'https://www.autoskills.sh',
             favicon: '/favicons/autoskillssh.webp',
-            tags: ['AI', 'Agents', 'CLI', 'Open Source'],
+            tags: ['AI', 'Agents', 'CLI', 'Open-source'],
           },
           {
             title: 'Nuclei',
             url: 'https://github.com/projectdiscovery/nuclei',
             favicon: '/favicons/nuclei.webp',
-            tags: ['Security', 'Vulnerability', 'Scanning', 'CLI', 'Open Source'],
+            tags: ['Security', 'Vulnerability', 'Scanning', 'CLI', 'Open-source'],
           },
           {
             title: 'Easing Dev',
@@ -858,6 +899,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/tabler-icons.webp',
             tags: ['Outline', 'Filled', 'Logos'],
           },
+
           {
             title: 'Isocons',
             url: 'https://www.isocons.app',
@@ -875,6 +917,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://thesvg.org',
             favicon: '/favicons/the-svg.webp',
             tags: ['Logos', 'Brands', 'AWS', 'Google Cloud', 'Azure', 'Up to date', 'Dark mode'],
+          },
+          {
+            title: 'All SVG Icons',
+            url: 'https://allsvgicons.com/collections/',
+            favicon: '/favicons/all-svg-icons.webp',
+            tags: ['Brands', 'Flags', 'Collection', 'Multi-color', 'Emojis'],
           },
           {
             title: 'SVGL',
@@ -1816,25 +1864,31 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           },
           {
             title: 'Recordly',
-            tags: ['Screen recording', 'Desktop', 'Windows', 'Mac', 'Open source'],
+            tags: ['Screen recording', 'Desktop', 'Windows', 'Mac', 'Open-source'],
             url: 'https://recordly.dev',
             favicon: '/favicons/recordly.webp',
           },
           {
             title: 'VoiceBox',
-            tags: ['Clone voice', 'Open source', 'Speech', 'Audio'],
+            tags: ['Clone voice', 'Open-source', 'Speech', 'Audio'],
             url: 'https://github.com/jamiepine/voicebox',
             favicon: '/favicons/voicebox.webp',
           },
           {
-            title: 'ComeCut',
-            tags: ['CapCut alternative', 'Open source', 'MP4', 'web', 'desktop'],
+            title: 'Clouflare Quick Tunnel',
+            tags: ['Localhost', 'Share', 'Deploy', 'Server'],
+            url: 'https://try.cloudflare.com/',
+            favicon: '/favicons/clouflare-quick-tunnel.webp',
+          },
+          {
+            title: 'DeepSeek Harness',
+            tags: ['Open-source', 'AI', 'Agent', 'Local', 'Automation', 'Plugins'],
             url: 'https://github.com/juntaosun/ComeCut',
             favicon: '/favicons/comecut.webp',
           },
           {
             title: 'Audacity',
-            tags: ['Audio editor', 'Open source', 'Desktop', 'Music'],
+            tags: ['Audio editor', 'Open-source', 'Desktop', 'Music'],
             url: 'http://audacityteam.org/',
             favicon: '/favicons/audacity.webp',
           },
@@ -1912,7 +1966,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
           },
           {
             title: 'Goatcounter',
-            tags: ['Analytics', 'Open source', 'Privacy friendly'],
+            tags: ['Analytics', 'Open-source', 'Privacy friendly'],
             url: 'https://www.goatcounter.com',
             favicon: '/favicons/goatcounter.webp',
           },
@@ -1921,6 +1975,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Analytics', 'Marketing', 'Cookie-free', 'GDPR'],
             url: 'https://ahrefs.com/web-analytics',
             favicon: '/favicons/ahrefs-web-analytics.webp',
+          },
+          {
+            title: 'Optimizer Duck',
+            tags: ['Windows', 'Cleaner', 'Open-source', 'Tweaks', ''],
+            url: 'https://optimizerduck.vercel.app',
+            favicon: '/favicons/optimizer-duck.webp',
           },
           {
             title: 'Yaak',
@@ -2240,3 +2300,7 @@ export const RECOMMENDED_TAGS = [
   'Editor',
   'Community',
 ] as const
+
+// poner recursos de twitter, fotos y safari
+// enviar issues e emails
+// volver a probar el animar los icons

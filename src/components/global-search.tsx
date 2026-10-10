@@ -2,7 +2,7 @@
 import { IconSearch, IconX } from '@andrsrxn/icons'
 import type { ComponentProps } from 'react'
 import { Badge } from '@/components/badge'
-import { RECOMMENDED_TAGS } from '@/lib/constants/resources'
+import { RECOMMENDED_TAGS, RESOURCES } from '@/lib/constants/resources'
 import { useQueryState } from '@/lib/hooks/use-query-state'
 import { cn } from '@/lib/utils/cn'
 import { getBadgeVariant } from '@/lib/utils/resources'
@@ -22,7 +22,7 @@ export const GlobalSearch = ({ className, ...props }: ComponentProps<'div'>) => 
         <input
           value={search || ''}
           onChange={e => setSearch(e.target.value)}
-          placeholder='More than 250 resources...'
+          placeholder={'Look for more than 300 resources...'}
           className='border-input bg-background focus-visible:ring-offset-background focus-visible:ring-ring w-full border-2 px-3 py-2 pl-10 text-base focus-visible:ring-2 focus-visible:outline-none'
         />
         {search && search.length > 1 ? (
