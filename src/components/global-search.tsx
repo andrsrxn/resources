@@ -2,7 +2,7 @@
 import { IconSearch, IconX } from '@andrsrxn/icons'
 import type { ComponentProps } from 'react'
 import { Badge } from '@/components/badge'
-import { RECOMMENDED_TAGS, RESOURCES } from '@/lib/constants/resources'
+import { RECOMMENDED_TAGS } from '@/lib/constants/resources'
 import { useQueryState } from '@/lib/hooks/use-query-state'
 import { cn } from '@/lib/utils/cn'
 import { getBadgeVariant } from '@/lib/utils/resources'
