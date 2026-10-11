@@ -236,6 +236,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Modern', 'Clean', 'Blocks', 'Dashboard', 'Design system', 'Components'],
           },
           {
+            title: 'Drawably',
+            url: 'https://www.drawably.dev/',
+            favicon: '/favicons/drawably.webp',
+            tags: ['Sketch', 'Styled', 'Components', 'UI', 'Unique', 'Interactive'],
+          },
+          {
             title: 'Shadcn M3e',
             url: 'https://shadcn-m3e.crystaworld.dev/',
             favicon: '/favicons/shadcn-m3e.webp',
@@ -857,6 +863,24 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.cosmos.so/explore/graphic-design',
             favicon: '/favicons/cosmos-graphic-design.webp',
             tags: ['Posters', 'Social media', 'Design styles', 'Community'],
+          },
+          {
+            title: 'DesignBookmark',
+            url: 'https://designbookmark.com/',
+            favicon: '/favicons/designbookmark.webp',
+            tags: ['Landing pages', 'Websites', 'Animated', 'Interactive', 'Sections', 'UI', 'UX'],
+          },
+          {
+            title: 'Prompt Motion',
+            url: 'https://prompt-motion.com/',
+            favicon: '/favicons/prompt-motion.webp',
+            tags: ['Animations', 'Videos', 'Marketing', 'Ads', 'Reveal'],
+          },
+          {
+            title: 'Appllama',
+            url: 'https://appllama.io/',
+            favicon: '/favicons/appllama.webp',
+            tags: ['Onboarding', 'Paywall', 'Screens', 'Mobile', 'Modern'],
           },
         ],
       },
