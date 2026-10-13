@@ -59,7 +59,7 @@ export const Card = ({
         )}
         <div className='mt-auto'>
           <a
-            href={url}
+            href={`${url}?ref=andrsrxn-resources`}
             target='_blank'
             rel='noopener noreferrer'
             className='font-body text-primary mt-2 flex w-full items-center gap-2 text-sm hover:underline hover:decoration-1 hover:underline-offset-1'>
