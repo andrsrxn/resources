@@ -1,9 +1,10 @@
 ---
 name: andrsrxn-icons
 description: Integrate, import, style, and handle accessibility or RTL for UI icons and flag icons from the @andrsrxn/icons library in React applications. Use when the user asks to add icons, search or pick icon components, set up icon RTL flipping, configure icon global CSS, or work with andrsrxn/icons types.
+compatibility: React 19 or higher. ESM-only package. Requires Node 20.16.0, 22.19.0, 24.0.0, or higher, and 'type' 'module' in the consuming project's package.json.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: 1.2.0
 ---
 
 # `andrsrxn/icons` agent skill
@@ -39,7 +40,7 @@ Do not use this skill when:
 
 - Creating source SVG files or generating TSX component code inside the `andrsrxn/icons` library repository.
 - Working with internal package code (e.g. `raw-icons`, build scripts).
-- Seeking brand or company logos (use SVGL or Simple Icons instead).
+- Seeking brand or company logos (use SVGL, theSVG, or Simple Icons instead).
 
 ---
 
@@ -95,13 +96,13 @@ Before executing tasks, identify:
 
 ## Common failure modes and fixes
 
-| Failure mode                      | Cause                                                                                                  | Fix                                                                                                |
-| :-------------------------------- | :----------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
-| **Wrong flag aspect ratio**       | Setting both `width` and `height` or `size` to fill all the square space without `preserveAspectRatio` | Set only `width` (e.g. `<IconFlagGT width={40} />`) or add `preserveAspectRatio="xMidYMid slice"`. |
-| **Import path errors**            | Importing flag icons from `@andrsrxn/icons` root instead of `@andrsrxn/icons/flags`                    | Update import path to `@andrsrxn/icons/flags` or `@andrsrxn/icons/flags/<code-or-name>`.           |
-| **Icon squishing in flex layout** | Missing baseline global CSS                                                                            | Add `.icon-ui { flex-shrink: 0; pointer-events: none; }` to global CSS.                            |
-| **Type collision errors**         | Importing `IconProps` and `FlagIconProps` from root                                                    | Import types from scoped paths: `@andrsrxn/icons/types` or `@andrsrxn/icons/flags/types`.          |
-| **Icons not flipping in RTL**     | Missing global RTL stylesheet                                                                          | Import `@andrsrxn/icons/rtl.css` in project root file.                                             |
+| Failure mode                      | Cause                                                                                         | Fix                                                                                       |
+| :-------------------------------- | :-------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
+| **Wrong flag aspect ratio**       | Setting both `width` and `height` or `size` to fill all the square space without `cover` prop | Set only `width` (e.g. `<IconFlagGT width={40} />`) or add `cover` prop.                  |
+| **Import path errors**            | Importing flag icons from `@andrsrxn/icons` root instead of `@andrsrxn/icons/flags`           | Update import path to `@andrsrxn/icons/flags` or `@andrsrxn/icons/flags/<code-or-name>`.  |
+| **Icon squishing in flex layout** | Missing baseline global CSS                                                                   | Add `.icon-ui { flex-shrink: 0; pointer-events: none; }` to global CSS.                   |
+| **Type collision errors**         | Importing `IconProps` and `FlagIconProps` from root                                           | Import types from scoped paths: `@andrsrxn/icons/types` or `@andrsrxn/icons/flags/types`. |
+| **Icons not flipping in RTL**     | Missing global RTL stylesheet                                                                 | Import `@andrsrxn/icons/rtl.css` in project root file.                                    |
 
 ---
 
