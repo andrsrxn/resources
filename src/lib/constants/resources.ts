@@ -937,6 +937,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Motion', 'TSX', 'Outline', 'Smooth'],
           },
           {
+            title: 'With Icons',
+            url: 'https://withicons.com/',
+            favicon: '/favicons/with-icons.webp',
+            tags: ['Duotone', 'Clay', 'Fun', '3D', 'Glass', 'Chrome', 'Sketch', 'Retro'],
+          },
+          {
             title: 'The SVG',
             url: 'https://thesvg.org',
             favicon: '/favicons/the-svg.webp',
