@@ -342,6 +342,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Motion', 'Interactive', 'Unique', 'Background', 'Shaders'],
           },
           {
+            title: 'Shaders',
+            url: 'https://shaders.com/docs/components',
+            favicon: '/favicons/shaders.webp',
+            tags: ['Background', 'Interactive', 'Animated', 'Shapes'],
+          },
+          {
             title: 'Pace UI',
             tags: ['Blocks', 'Modern', 'Toolkits', 'GSAP', 'Motion', 'Sections'],
             url: 'https://paceui.com/',
@@ -573,6 +579,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://shader-tool.vercel.app',
             favicon: '/favicons/shader-tool.webp',
             inverted: true,
+          },
+          {
+            title: 'ASCII Magic',
+            url: 'https://www.ascii-magic.com/',
+            favicon: '/favicons/ascii-magic.webp',
+            tags: ['Generator', 'Editor', 'Mosaic', 'Pixel', 'Dither', 'Dots'],
           },
           {
             title: 'Emoji picker',
@@ -929,6 +941,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.isocons.app',
             favicon: '/favicons/isocons.webp',
             tags: ['Isometric', '3D', 'Filled', 'Outline', 'Rounded'],
+          },
+          {
+            title: 'Hairline',
+            url: 'https://hairline.lucasmarkes.com/figures',
+            favicon: '/favicons/hairline.webp',
+            tags: ['Isometric', 'Animated', 'UI', 'UX', 'Outline'],
           },
           {
             title: 'Lucide Icons Animated',
@@ -1929,6 +1947,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/cloud-in-a-bottle.webp',
           },
           {
+            title: 'FontBase',
+            tags: ['Local', 'Manager', 'Playground', 'Tags', 'Search'],
+            url: 'https://fontba.se/',
+            favicon: '/favicons/fontbase.webp',
+          },
+          {
             title: 'Agent QA',
             url: 'https://vostride.com/',
             favicon: '/favicons/agent-qa.webp',
@@ -1939,6 +1963,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Canvas', 'Sketches', 'Diagrams', 'Notes'],
             url: 'https://koboyo.com',
             favicon: '/favicons/koboyo.webp',
+          },
+          {
+            title: 'Inpaint Web',
+            tags: ['Remove element', 'Online', 'AI'],
+            url: 'https://inpaintweb.lxfater.com/',
+            favicon: '/favicons/inpaint-web.webp',
           },
           {
             title: 'Diagrams',
