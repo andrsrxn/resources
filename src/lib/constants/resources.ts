@@ -669,10 +669,10 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/evil-charts.webp',
           },
           {
-            title: 'Mermaid',
-            tags: ['Graphs', 'Diagrams', 'Markdown'],
-            url: 'https://mermaid.ai/open-source/intro',
-            favicon: '/favicons/mermaid.webp',
+            title: 'Ondine',
+            tags: ['Mermaid alternative', 'Diagrams', 'Flowcharts', 'Markdown'],
+            url: 'https://ondine.sh/',
+            favicon: '/favicons/ondine.webp',
           },
           {
             title: 'TanStack Charts',
@@ -698,6 +698,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Diagrams', 'Editor', 'Workflow', 'Nodes', 'Graph'],
             url: 'https://reactflow.dev',
             favicon: '/favicons/react-flow.webp',
+          },
+          {
+            title: 'Gauge UI',
+            tags: ['Speedometer', 'Dial', 'Indicators', 'Wheater'],
+            url: 'https://www.gauge-ui.dev',
+            favicon: '/favicons/gauge-ui.webp',
           },
           {
             title: 'Dither Kit',
@@ -883,10 +889,16 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Landing pages', 'Websites', 'Animated', 'Interactive', 'Sections', 'UI', 'UX'],
           },
           {
+            title: 'Launch Videos',
+            url: 'https://launchvideos.gallery/',
+            favicon: '/favicons/launch-videos.webp',
+            tags: ['Videos', 'Ads', 'Product', 'Marketing'],
+          },
+          {
             title: 'Prompt Motion',
             url: 'https://prompt-motion.com/',
             favicon: '/favicons/prompt-motion.webp',
-            tags: ['Animations', 'Videos', 'Marketing', 'Ads', 'Reveal'],
+            tags: ['Videos', 'Ads', 'Launch', 'Product', 'Marketing'],
           },
           {
             title: 'Appllama',
@@ -1147,6 +1159,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/logo-book.webp',
             tags: ['Abstract', 'Minimalistic', 'By category', 'Monochrome'],
           },
+          {
+            title: 'Logo To Use',
+            url: 'https://logotouse.com/logos/colored',
+            favicon: '/favicons/logo-to-use.webp',
+            tags: ['Placeholder', 'Inspiration', 'Simple', 'Lettering', 'Symbols'],
+          },
         ],
       },
       fonts: {
@@ -1180,6 +1198,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.fontspace.com/new/fonts',
             favicon: '/favicons/fontspace.webp',
             tags: ['Discover', 'New fonts', 'Display'],
+          },
+          {
+            title: 'Best Free Fonts',
+            url: 'https://bestfreefonts.com/',
+            favicon: '/favicons/best-free-fonts.webp',
+            tags: ['Discover', 'Sans', 'Serif', 'Script', 'Monospace', 'Display'],
           },
           {
             title: 'Urban Fonts',
@@ -1641,6 +1665,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Tool', 'Editor', '3D logos', 'Texture', 'Metal', 'Liquid'],
           },
           {
+            title: 'Logo Grid',
+            url: 'https://www.visual.af/es/logo-grid',
+            favicon: '/favicons/logo-grid.webp',
+            tags: ['PLugin', 'Affinity', 'Blueprints', 'Mockups'],
+          },
+          {
             title: 'Antlii',
             url: 'https://antlii.work',
             favicon: '/favicons/antlii.webp',
@@ -1661,6 +1691,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://shaders.paper.design',
             favicon: '/favicons/shaders-paper-design.webp',
           },
+
           {
             title: 'Pixel Crash',
             tags: ['Video effect', 'Online', 'Texture', 'Mapping'],
@@ -1673,6 +1704,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.type-tools.com/dither/dither.html',
             favicon: '/favicons/type-tools.webp',
             tags: ['Typography', 'Dither', 'Blur', 'Line', 'Slice'],
+          },
+          {
+            title: 'HoloCloth',
+            url: 'https://holocloth.vercel.app/',
+            favicon: '/favicons/holocloth.webp',
+            tags: ['Holographic', 'Chrome', 'Online', 'Texture', 'Paper'],
           },
           {
             title: 'GrainRad',
@@ -2196,6 +2233,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Accessibility', 'UI', 'UX', 'Design', 'Foundation'],
           },
           {
+            title: 'Iconography Encyclopedia',
+            url: 'https://encyclopedia.iconography.co/#view=directory',
+            favicon: '/favicons/iconography-encyclopedia.webp',
+            tags: ['Icons', 'Guides', 'Design', 'Fundamentals'],
+          },
+          {
             title: 'Exercism',
             url: 'https://exercism.org',
             favicon: '/favicons/exercism.webp',
@@ -2311,7 +2354,7 @@ export const FEATURE_TAGS: Record<string, BadgeProps['variant']> = {
   branding: 'red',
   minimalistic: 'white',
   monochrome: 'white',
-  clean: 'white',
+  clean: 'sky',
   ux: 'cyan',
   motion: 'pink',
   interactive: 'pink',
@@ -2335,7 +2378,6 @@ export const FEATURE_TAGS: Record<string, BadgeProps['variant']> = {
   editor: 'emerald',
   generator: 'lime',
   converter: 'red',
-  logos: 'sky',
   community: 'blue',
   practice: 'indigo',
   dashboard: 'orange',
