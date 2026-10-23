@@ -330,10 +330,10 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/react-bits.webp',
           },
           {
-            title: 'Border beam',
-            tags: ['Single', 'React', 'SwiftUI', 'React Native'],
-            url: 'https://beam.jakubantalik.com/pulse',
-            favicon: '/favicons/border-beam.webp',
+            title: 'Marq Design',
+            url: 'https://design.helpmarq.com/',
+            favicon: '/favicons/marq-design.webp',
+            tags: ['Animated', 'Collection', 'Motion', 'Backgrounds', 'Charts', 'UI', 'Sections'],
           },
           {
             title: 'Gooey',
@@ -370,6 +370,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://bencho.dev/',
             favicon: '/favicons/bencho.webp',
             tags: ['Motion', 'Interactive', 'UI', 'UX', 'Unique', 'Modern'],
+          },
+          {
+            title: 'Border beam',
+            tags: ['Single', 'React', 'SwiftUI', 'React Native'],
+            url: 'https://beam.jakubantalik.com/pulse',
+            favicon: '/favicons/border-beam.webp',
           },
           {
             title: 'Ascii Rest',
@@ -1568,6 +1574,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://artvee.com',
             favicon: '/favicons/artvee.webp',
             tags: ['Classical art', 'Paintings', 'Drawings', 'Illustrations', 'Posters', 'HD'],
+          },
+          {
+            title: 'One Prompt Design',
+            url: 'https://onepromptdesign.com/',
+            favicon: '/favicons/one-prompt-design.webp',
+            tags: ['Inspiration', 'AI', 'Generated', 'Wallpapers', 'Posts', 'Social media'],
           },
           {
             title: 'PNGWing',
