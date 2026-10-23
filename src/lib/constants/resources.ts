@@ -1695,10 +1695,16 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Tool', 'Editor', '3D logos', 'Texture', 'Metal', 'Liquid'],
           },
           {
+            title: 'ReactDrops Liquid Glass Logo',
+            url: 'https://reactdrops.dev/components/text-reveal/liquid-glass-logo',
+            favicon: '/favicons/reactdrops-liquid-glass-logo.webp',
+            tags: ['Motion', 'Animated', 'Online', 'Component'],
+          },
+          {
             title: 'Logo Grid',
             url: 'https://www.visual.af/es/logo-grid',
             favicon: '/favicons/logo-grid.webp',
-            tags: ['PLugin', 'Affinity', 'Blueprints', 'Mockups'],
+            tags: ['Plugin', 'Affinity', 'Blueprints', 'Mockups'],
           },
           {
             title: 'Antlii',
