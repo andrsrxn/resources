@@ -218,6 +218,18 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Composable', 'Modern', 'Design system', 'Easy to use'],
           },
           {
+            title: 'SortUI',
+            url: 'https://sortui.dev/docs/components',
+            favicon: '/favicons/sortui.webp',
+            tags: ['Composable', 'Modern', 'Design system', 'Easy to use'],
+          },
+          {
+            title: 'SakaniUI',
+            url: 'https://www.sakaniui.com/',
+            favicon: '/favicons/sakaniui.webp',
+            tags: ['Composable', 'Modern', 'Design system', 'Easy to use', 'Blocks'],
+          },
+          {
             title: 'Preline',
             tags: ['Modern', 'Clean', 'Plain HTML', 'JavaScript', 'Blocks'],
             url: 'https://preline.co',
@@ -492,6 +504,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Chatbot', 'Agents', 'UX', 'Motion'],
           },
           {
+            title: 'AffectUI Illustrations',
+            url: 'https://www.affectui.com/illustrations',
+            favicon: '/favicons/affectui-illustrations.webp',
+            tags: ['Animated', 'Interactive', 'Modern', 'Cards', 'Scenes'],
+          },
+          {
             title: 'Number Flow',
             url: 'https://number-flow.barvian.me',
             favicon: '/favicons/number-flow.webp',
@@ -548,6 +566,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://haptics.lochie.me/',
             favicon: '/favicons/web-haptics.webp',
             tags: ['Feedback', 'Sounds', 'SFX'],
+          },
+          {
+            title: 'HextaUI Video Player',
+            url: 'https://hextaui.com/docs/video-player',
+            favicon: '/favicons/hextaui-video-player.webp',
+            tags: ['UI', 'Controls', 'Accesibility'],
           },
           {
             title: 'MapCN',
@@ -1158,6 +1182,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://logobook.com',
             favicon: '/favicons/logo-book.webp',
             tags: ['Abstract', 'Minimalistic', 'By category', 'Monochrome'],
+          },
+          {
+            title: 'Symbools',
+            url: 'https://www.symbools.com',
+            favicon: '/favicons/symbools.webp',
+            tags: ['Symbols', 'Trademarks', 'Inspiration', 'Figures', 'Abstract'],
           },
           {
             title: 'Logo To Use',
