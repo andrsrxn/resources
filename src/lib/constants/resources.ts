@@ -1972,6 +1972,18 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Environment variables', 'Share', 'Security'],
           },
           {
+            title: 'ShieldCN',
+            url: 'https://shieldcn.dev/ ',
+            favicon: '/favicons/shieldcn.webp',
+            tags: ['Github', 'Badges', 'Stats', 'Cards', 'Builder', 'READMEs'],
+          },
+          {
+            title: 'RunOnWeb',
+            url: 'https://runonweb.ai/',
+            favicon: '/favicons/runonweb.webp',
+            tags: ['AI', 'Tools', 'Browser', 'Open-source', 'Speech', 'Remover', 'Generators'],
+          },
+          {
             title: 'PitchHut',
             url: 'https://www.pitchhut.com',
             favicon: '/favicons/pitchhut.webp',
@@ -2012,6 +2024,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Deploy', 'VPS', 'Server', 'Self-hosted'],
             url: 'https://cloudinabottle.org/',
             favicon: '/favicons/cloud-in-a-bottle.webp',
+          },
+          {
+            title: 'Sprigo',
+            url: 'https://mehmetozer.dev/sprigo',
+            favicon: '/favicons/sprigo.webp',
+            tags: ['Learning', 'Language', 'Open-source', 'AI', 'Local', 'Duolingo alternative'],
           },
           {
             title: 'FontBase',
