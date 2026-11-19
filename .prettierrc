@@ -18,5 +18,5 @@
   "jsxSingleQuote": true,
   "arrowParens": "avoid",
   "printWidth": 100,
-  "endOfLine": "auto"
+  "endOfLine": "lf"
 }

@@ -2316,6 +2316,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/quickrefme.webp',
             tags: ['Programming', 'Reference', 'All languages', 'Cheat sheets'],
           },
+
           {
             title: 'A11y Collective',
             url: 'https://www.a11y-collective.com/blog',
