@@ -1,5 +1,5 @@
 ---
-import { IconStar } from '@andrsrxn/icons'
+import { IconStar, IconStarFilled } from '@andrsrxn/icons'
 import { GlobalSearch } from '@/components/global-search'
 import { Heading } from '@/components/heading'
 import { ResourceGrid } from '@/components/resource-grid'
@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro'
         <Heading className='laptop:text-8xl text-7xl'>Resources</Heading>
         <Text variant='secondary' className='desktop:text-xl'>
           A curated hand-picked collection of hundreds of <strong>free</strong> resources, tools,
-          and inspirations for developers and creators.
+          and inspiration for developers and creators.
         </Text>
         <GlobalSearch client:load />
         <a
@@ -22,8 +22,10 @@ import Layout from '../layouts/Layout.astro'
           target='_blank'
           aria-label='Give a star on GitHub'
           rel='noopener noreferrer'
-          class='border-input bg-background focus-visible:ring-offset-background focus-visible:ring-ring hover:bg-muted absolute top-17 right-8 flex w-fit items-center gap-2 border-2 px-3 py-2 text-sm transition focus-visible:ring-2 focus-visible:outline-none'>
-          <IconStar className='size-5 text-amber-500' />
+          title='Give a star on GitHub'
+          class='border-input bg-background focus-visible:ring-offset-background focus-visible:ring-ring hover:bg-muted absolute top-17 right-8 flex w-fit items-center gap-2 border-2 px-3 py-2 text-sm transition focus-visible:ring-2 focus-visible:outline-none group'>
+          <IconStar className='size-5 text-amber-500 group-hover:hidden' />
+          <IconStarFilled className='size-5 text-amber-500 hidden group-hover:inline-block' />
           <svg viewBox='0 0 1024 1024' fill='none' class='size-5'>
             <path
               fill='#fff'
