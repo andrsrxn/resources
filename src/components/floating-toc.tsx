@@ -64,6 +64,7 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
     ]
 
     const elements = allIds
+      // biome-ignore lint/style/useDomQuerySelector: allowed
       .map(id => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null)
 

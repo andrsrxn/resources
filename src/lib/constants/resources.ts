@@ -1,4 +1,6 @@
 /** biome-ignore-all lint/security/noSecrets: false positive */
+import type { BadgeProps } from '@/components/badge'
+
 export interface ResourceItem {
   title: string
   url: string
@@ -2474,8 +2476,6 @@ export const RESOURCES: Record<string, ResourceGroup> = {
     },
   },
 } as const
-
-import type { BadgeProps } from '@/components/badge'
 
 export const FEATURE_TAGS: Record<string, BadgeProps['variant']> = {
   marketing: 'green',
