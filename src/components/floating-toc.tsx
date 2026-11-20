@@ -203,7 +203,12 @@ export const FloatingTOC = ({ className, categories, ...props }: FloatingTOCProp
         ref={tocFlyoutRef}
         onMouseEnter={handleTOCMouseEnter}
         // Stop clicks inside the flyout from bubbling to the nav toggle handler
-        onClick={e => e.stopPropagation()}
+        onClick={e => {
+          e.stopPropagation()
+          if (isTouch && e.target instanceof Element && e.target.closest('a')) {
+            setIsTouchOpen(false)
+          }
+        }}
         className={cn(
           'bg-card absolute top-1/2 right-0 grid h-max max-h-[calc(100dvh-100px)] w-max max-w-xl translate-x-4 -translate-y-1/2 gap-2 overflow-y-auto overscroll-contain border p-4 transition-all duration-300 select-none',
           // Touch: controlled via state
