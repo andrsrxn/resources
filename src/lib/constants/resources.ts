@@ -230,6 +230,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Composable', 'Modern', 'Design system', 'Easy to use', 'Blocks'],
           },
           {
+            title: 'Expokit',
+            url: 'https://expokit.in/',
+            favicon: '/favicons/expokit.webp',
+            tags: ['Expo', 'React Native', 'UI', 'Collection', 'Charts'],
+          },
+          {
             title: 'Preline',
             tags: ['Modern', 'Clean', 'Plain HTML', 'JavaScript', 'Blocks'],
             url: 'https://preline.co',
@@ -312,6 +318,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['Animated', 'AI', 'Agents', 'Chatbot'],
             url: 'https://www.beautifului.dev',
             favicon: '/favicons/beautiful-ui.webp',
+          },
+          {
+            title: 'Ruixen',
+            url: 'https://ruixen.com/',
+            favicon: '/favicons/ruixen.webp',
+            tags: ['Animated', 'AI', 'Agents', 'Chatbot'],
           },
           {
             title: 'BeUI',
@@ -896,6 +908,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://resourceboy.com',
             favicon: '/favicons/resource-boy.webp',
           },
+          {
+            title: 'Design.How',
+            url: 'https://design.how/skills',
+            favicon: '/favicons/designhow.webp',
+            tags: ['Skills', 'Guide', 'Generation', 'Logos', 'Motion', 'Videos'],
+          },
         ],
       },
       inspiration: {
@@ -923,6 +941,21 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://launchvideos.gallery/',
             favicon: '/favicons/launch-videos.webp',
             tags: ['Videos', 'Ads', 'Product', 'Marketing'],
+          },
+          {
+            title: 'DesignEng.Tools',
+            url: 'https://www.designeng.tools/',
+            favicon: '/favicons/designengtools.webp',
+            tags: [
+              'Design Systems',
+              'Skills',
+              'Websites',
+              'App icons',
+              'Og images',
+              'Illustrations',
+              'Fonts',
+              'Playbooks',
+            ],
           },
           {
             title: 'Prompt Motion',
@@ -983,6 +1016,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             url: 'https://www.isocons.app',
             favicon: '/favicons/isocons.webp',
             tags: ['Isometric', '3D', 'Filled', 'Outline', 'Rounded'],
+          },
+          {
+            title: 'StickItUp',
+            url: 'https://stickitupx.vercel.app/stickers',
+            favicon: '/favicons/stickitup.webp',
+            tags: ['Stickers', 'SVG', 'Components'],
           },
           {
             title: 'Hairline',
@@ -2329,6 +2368,33 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/google-seo-starter-guide.webp',
             tags: ['SEO', 'Google', 'Guide', 'Fundamentals'],
           },
+          {
+            title: 'DeepAI Code',
+            url: 'https://deepai.org/chat/ai-code',
+            favicon: '/favicons/deepai-code.webp',
+            tags: ['AI', 'Local', 'Models', 'Desktop', 'Agents'],
+          },
+          {
+            title: 'MyPack',
+            url: 'https://mypack.pages.dev/',
+            favicon: '/favicons/mypack.webp',
+            tags: ['Web-to-app', 'Desktop', 'Local', 'Discover'],
+          },
+          {
+            title: 'SelfHostLayer',
+            url: 'https://selfhostlayer.com/',
+            favicon: '/favicons/selfhostlayer.webp',
+            tags: [
+              'Self hosting',
+              'VPS',
+              'Cloud',
+              'Guide',
+              'Fundamentals',
+              'Vercel alternative',
+              'Open-source',
+            ],
+          },
+
           {
             title: 'Learn Performance',
             url: 'https://web.dev/learn/performance',
