@@ -23,8 +23,7 @@ export const Footer = () => {
               className='flex items-center gap-1 text-sm underline decoration-1 underline-offset-2'
               href='https://andrsrxn.com'
               target='__blank'
-              rel='noopener noreferrer'
-              >
+              rel='noopener noreferrer'>
               See Portfolio
               <IconExternalLink className='size-4' />
             </a>
