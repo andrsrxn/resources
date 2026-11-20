@@ -1,6 +1,6 @@
 import { IconExternalLink } from '@andrsrxn/icons'
 import type { ComponentProps } from 'react'
-import { Badge } from '@/components/badge'
+import { CardBadge } from '@/components/card-badge'
 import { Heading } from '@/components/heading'
 import { cn } from '@/lib/utils/cn'
 import { getBadgeVariant } from '@/lib/utils/resources'
@@ -50,9 +50,8 @@ export const Card = ({
             {tags.map(tag => {
               const variant = getBadgeVariant(tag)
               return (
-                <Badge variant={variant} border={variant !== 'base'} key={tag}>
-                  {tag}
-                </Badge>
+                // render button y hacer que desparezca el toc en mobile on tap
+                <CardBadge variant={variant} border={variant !== 'base'} key={tag} tag={tag} />
               )
             })}
           </div>
