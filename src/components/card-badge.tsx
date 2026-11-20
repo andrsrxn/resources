@@ -1,7 +1,6 @@
 import type { BadgeProps } from '@/components/badge'
 import { Badge } from '@/components/badge'
 import { useQueryState } from '@/lib/hooks/use-query-state'
-import { slugify } from '@/lib/utils/strings'
 
 export const CardBadge = ({
   variant,

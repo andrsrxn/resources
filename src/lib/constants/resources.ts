@@ -26,7 +26,7 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             title: 'Recent Designs',
             url: 'https://recent.design',
             favicon: '/favicons/recent-designs.webp',
-            tags: ['Animated', 'Motion', 'Unique', 'Experience', 'Interactive'],
+            tags: ['Animated', 'Motion', 'Unique', 'Experiencial', 'Interactive'],
           },
           {
             title: 'Toolfolio',
@@ -2396,7 +2396,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
               'Open-source',
             ],
           },
-
+          {
+            title: 'Offlined',
+            tags: ['Wikipedia', 'Wikimedia', 'Maps', 'AI', 'Local', 'Desktop'],
+            url: 'https://www.offlined.org/',
+            favicon: '/favicons/offlined.webp',
+          },
           {
             title: 'Learn Performance',
             url: 'https://web.dev/learn/performance',
@@ -2452,7 +2457,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             favicon: '/favicons/laws-of-ux.webp',
             tags: ['UX', 'Reference', 'Guide', 'Fundamentals'],
           },
-
+          {
+            title: 'Aprender Rust',
+            tags: ['Spanish', 'Rust', 'Fundamentals', 'Guide', 'Programming'],
+            url: 'https://aprenderust.dev/',
+            favicon: '/favicons/aprender-rust.webp',
+          },
           {
             title: 'Hacksplaining',
             url: 'https://www.hacksplaining.com/lessons',
