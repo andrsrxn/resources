@@ -12,7 +12,7 @@ export const GlobalSearch = ({ className, ...props }: ComponentProps<'div'>) => 
   const [search, setSearch] = useQueryState('s', { defaultValue: '' })
 
   const handleTagClick = (tag: string) => {
-    setSearch(prev => (prev?.toLowerCase() === tag.toLowerCase() ? '' : tag))
+    setSearch(prev => (prev?.toLowerCase() === tag.toLowerCase() ? '' : tag.toLowerCase()))
   }
 
   return (
@@ -35,7 +35,7 @@ export const GlobalSearch = ({ className, ...props }: ComponentProps<'div'>) => 
           </button>
         ) : null}
       </div>
-      <div className='mt-5 grid gap-5'>
+      <div className={cn('mt-5 grid gap-5', search && search.length > 1 ? 'hidden' : 'grid')}>
         <span className='block font-medium'>Suggested Tags</span>
         <div className='flex max-w-4xl flex-wrap gap-2'>
           {RECOMMENDED_TAGS.map(tag => (
