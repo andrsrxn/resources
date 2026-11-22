@@ -594,6 +594,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
             tags: ['UI', 'Controls', 'Accesibility'],
           },
           {
+            title: 'Liquid Glass',
+            url: 'https://liquid-glass-interface.pages.dev/',
+            favicon: '/favicons/liquid-glass.webp',
+            tags: ['React', 'UI', 'Interactive', 'Animated', 'Refraction'],
+          },
+          {
             title: 'MapCN',
             url: 'https://www.mapcn.dev/',
             favicon: '/favicons/mapcn.webp',
@@ -958,6 +964,12 @@ export const RESOURCES: Record<string, ResourceGroup> = {
               'Fonts',
               'Playbooks',
             ],
+          },
+          {
+            title: 'Appicons Store',
+            url: 'https://www.appicons.store/',
+            favicon: '/favicons/appicons-store.webp',
+            tags: ['App icons', 'Icons', 'Premium'],
           },
           {
             title: 'Prompt Motion',
